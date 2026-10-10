@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="th" class="dark scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Developer, Creator & Gamer</title>
+    <title>Snow Allen | Modern Developer & Creator Portfolio</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
-                    },
                     colors: {
-                        darkBg: '#0a0f1d',
-                        cardBg: '#131b2e',
-                        accentCyan: '#06b6d4',
-                        accentPurple: '#8b5cf6',
-                        accentPink: '#ec4899',
+                        darkBg: '#090d16',
+                        cardBg: '#121826',
+                        neonCyan: '#00f2fe',
+                        neonPurple: '#7f00ff',
+                        neonBlue: '#4facfe',
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 20px rgba(0, 242, 254, 0.3)',
+                        'neon-purple': '0 0 20px rgba(127, 0, 255, 0.3)',
+                        'neon-box': '0 0 25px rgba(0, 242, 254, 0.15)',
                     },
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 3s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
                     },
                     keyframes: {
                         float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
+                            '0%, 100%': { transform: 'translateY(0px)' },
                             '50%': { transform: 'translateY(-10px)' },
                         }
                     }
@@ -37,13 +37,26 @@
             }
         }
     </script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Custom scrollbar and glow effects */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090d16;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0a0f1d;
+            background: #090d16;
         }
         ::-webkit-scrollbar-thumb {
             background: #1e293b;
@@ -52,500 +65,764 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #334155;
         }
-        .glow-effect {
-            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.3);
+        .glass-panel {
+            background: rgba(18, 24, 38, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-text {
+            text-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
         }
         .glow-purple {
-            box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.3);
-        }
-        .grid-bg {
-            background-image: radial-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px);
-            background-size: 32px 32px;
+            text-shadow: 0 0 15px rgba(127, 0, 255, 0.5);
         }
     </style>
 </head>
-<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-accentCyan selection:text-darkBg grid-bg min-h-screen">
+<body class="bg-darkBg text-gray-100 selection:bg-cyan-500 selection:text-black">
 
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accentCyan to-accentPurple flex items-center justify-center font-mono font-bold text-lg text-darkBg shadow-lg group-hover:scale-105 transition-transform">
-                    &lt;/&gt;
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 p-0.5 shadow-neon-cyan">
+                        <div class="w-full h-full bg-darkBg rounded-[10px] flex items-center justify-center font-bold text-cyan-400 font-mono">
+                            SA
+                        </div>
+                    </div>
+                    <span class="font-bold text-lg tracking-wider bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                        Snowqex25
+                    </span>
                 </div>
-                <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-accentCyan bg-clip-text text-transparent">
-                    Portfolio.dev
-                </span>
-            </a>
-            
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
-                <a href="#about" class="hover:text-accentCyan transition-colors">เกี่ยวกับฉัน</a>
-                <a href="#skills" class="hover:text-accentCyan transition-colors">ทักษะ & ความเชี่ยวชาญ</a>
-                <a href="#projects" class="hover:text-accentCyan transition-colors">ผลงาน & โปรเจกต์</a>
-                <a href="#gaming" class="hover:text-accentCyan transition-colors">เกมมิ่ง & ครีเอเตอร์</a>
-                <a href="#contact" class="hover:text-accentCyan transition-colors">ติดต่อ</a>
-            </div>
 
-            <div class="hidden md:flex items-center gap-4">
-                <a href="https://github.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-medium text-sm border border-slate-700/50 flex items-center gap-2 transition-all hover:scale-105 shadow-md">
-                    <i class="fa-brands fa-github text-lg"></i> GitHub
-                </a>
-            </div>
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-cyan-400 transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-cyan-400 transition-colors">Projects</a>
+                    <a href="#stats" class="text-gray-300 hover:text-cyan-400 transition-colors">GitHub Stats</a>
+                    <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
+                </div>
 
-            <!-- Mobile menu button -->
-            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2">
-                <i class="fa-solid fa-bars text-2xl"></i>
-            </button>
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://github.com/Snowqex25" target="_blank" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500/10 to-purple-500/10 hover:from-cyan-500/20 hover:to-purple-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-semibold transition-all duration-300 shadow-neon-cyan flex items-center space-x-2">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-cyan-400 focus:outline-none p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <!-- Mobile menu dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-cardBg/95 backdrop-blur-lg border-b border-slate-800 px-6 py-6 space-y-4">
-            <a href="#about" class="block text-slate-300 hover:text-accentCyan font-medium">เกี่ยวกับฉัน</a>
-            <a href="#skills" class="block text-slate-300 hover:text-accentCyan font-medium">ทักษะ & ความเชี่ยวชาญ</a>
-            <a href="#projects" class="block text-slate-300 hover:text-accentCyan font-medium">ผลงาน & โปรเจกต์</a>
-            <a href="#gaming" class="block text-slate-300 hover:text-accentCyan font-medium">เกมมิ่ง & ครีเอเตอร์</a>
-            <a href="#contact" class="block text-slate-300 hover:text-accentCyan font-medium">ติดต่อ</a>
-            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                <a href="https://github.com" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-slate-800 text-slate-200 font-medium border border-slate-700 flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-github"></i> GitHub Profile
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5 hover:text-cyan-400">About</a>
+            <a href="#skills" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5 hover:text-cyan-400">Skills</a>
+            <a href="#projects" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5 hover:text-cyan-400">Projects</a>
+            <a href="#stats" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5 hover:text-cyan-400">GitHub Stats</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5 hover:text-cyan-400">Contact</a>
+            <div class="pt-2">
+                <a href="https://github.com/Snowqex25" target="_blank" class="w-full text-center block px-4 py-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-semibold">
+                    <i class="fab fa-github mr-2"></i> GitHub Profile
                 </a>
             </div>
         </div>
     </nav>
 
-    <header class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-        <!-- Glow background shapes -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accentCyan/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-accentPurple/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden">
+        <!-- Background Glow Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs sm:text-sm font-medium text-accentCyan glow-effect">
-                        <span class="w-2 h-2 rounded-full bg-accentCyan animate-ping"></span>
-                        พร้อมสำหรับการร่วมงาน & โปรเจกต์ใหม่
-                    </div>
-
-                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none">
-                        Hi, ผมคือ <br class="hidden sm:inline">
-                        <span class="bg-gradient-to-r from-accentCyan via-accentPurple to-accentPink bg-clip-text text-transparent">Developer & Creator</span>
-                    </h1>
-
-                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light">
-                        หลงใหลในการเขียนโค้ด สร้างสรรค์เสียงดนตรีด้วย BandLab ชื่นชอบโลกของเกม (Albion Online & Modding) และประยุกต์ใช้ AI Tools เพื่อขับเคลื่อนไอเดียให้กลายเป็นจริง
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-accentCyan to-blue-600 text-darkBg font-bold text-base hover:opacity-90 transition-all shadow-lg glow-effect flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-code"></i> ดูผลงานโปรเจกต์
-                        </a>
-                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 font-semibold text-base border border-slate-700 transition-all flex items-center justify-center gap-2">
-                            <i class="fa-regular fa-paper-plane"></i> ติดต่อพูดคุย
-                        </a>
-                    </div>
-
-                    <!-- Tech stack mini badges -->
-                    <div class="pt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-slate-400 text-xs sm:text-sm font-mono">
-                        <span class="text-slate-500 font-sans">Tech Stack:</span>
-                        <span class="px-3 py-1 rounded-lg bg-cardBg border border-slate-800 text-accentCyan">React / JS</span>
-                        <span class="px-3 py-1 rounded-lg bg-cardBg border border-slate-800 text-accentPurple">Python / AI</span>
-                        <span class="px-3 py-1 rounded-lg bg-cardBg border border-slate-800 text-accentPink">BandLab Audio</span>
-                        <span class="px-3 py-1 rounded-lg bg-cardBg border border-slate-800 text-amber-400">Game Modding</span>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Glowing Avatar / Logo Badge -->
+            <div class="mb-8 inline-block animate-float">
+                <div class="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-3xl p-1 bg-gradient-to-tr from-cyan-400 via-purple-500 to-blue-600 shadow-neon-cyan">
+                    <div class="w-full h-full bg-cardBg rounded-[22px] flex items-center justify-center overflow-hidden">
+                        <img src="https://placehold.co/200x200/121826/00f2fe?text=❄️" alt="Snow Allen Avatar" class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/200x200/121826/ffffff?text=SA'">
                     </div>
                 </div>
+            </div>
 
-                <!-- Hero Visual Card -->
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative w-full max-w-md">
-                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-accentCyan via-accentPurple to-accentPink opacity-30 blur-xl animate-pulse-slow"></div>
-                        
-                        <div class="relative rounded-3xl bg-cardBg border border-slate-800 p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
-                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                                </div>
-                                <span class="text-xs font-mono text-slate-500">profile.config.js</span>
-                            </div>
+            <!-- Greeting & Name -->
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-mono mb-4 shadow-neon-cyan">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span>Hello, World! I'm</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Snow <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent glow-text">Allen</span>
+            </h1>
 
-                            <div class="space-y-4 font-mono text-xs sm:text-sm text-slate-300">
-                                <div class="p-4 rounded-xl bg-darkBg border border-slate-800/80 space-y-2">
-                                    <p class="text-accentPurple">const <span class="text-white">creator</span> = &#123;</p>
-                                    <p class="pl-4">role: <span class="text-emerald-400">"Full-Stack Dev & Creator"</span>,</p>
-                                    <p class="pl-4">hobbies: [<span class="text-amber-300">"Gaming"</span>, <span class="text-amber-300">"Music Production"</span>],</p>
-                                    <p class="pl-4">favoriteGame: <span class="text-emerald-400">"Albion Online"</span>,</p>
-                                    <p class="pl-4">aiEnthusiast: <span class="text-accentCyan">true</span></p>
-                                    <p class="text-accentPurple">&#125;;</p>
-                                </div>
+            <!-- Typing Effect Subtitle -->
+            <div class="text-xl sm:text-2xl md:text-3xl font-mono text-gray-300 h-14 sm:h-12 flex items-center justify-center mb-8">
+                <span>&gt; I am a&nbsp;</span>
+                <span id="typing-text" class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-0.5"></span>
+                <span class="animate-pulse text-cyan-400">_</span>
+            </div>
 
-                                <div class="grid grid-cols-2 gap-3 pt-2">
-                                    <div class="p-3 rounded-xl bg-darkBg/60 border border-slate-800 flex items-center gap-3">
-                                        <div class="p-2 rounded-lg bg-cyan-500/10 text-accentCyan">
-                                            <i class="fa-solid fa-gamepad text-lg"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-bold text-xs text-white">Gamer</h4>
-                                            <p class="text-[10px] text-slate-400">MMORPG & Mods</p>
-                                        </div>
-                                    </div>
-                                    <div class="p-3 rounded-xl bg-darkBg/60 border border-slate-800 flex items-center gap-3">
-                                        <div class="p-2 rounded-lg bg-purple-500/10 text-accentPurple">
-                                            <i class="fa-solid fa-music text-lg"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-bold text-xs text-white">Musician</h4>
-                                            <p class="text-[10px] text-slate-400">BandLab Producer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Bio snippet -->
+            <p class="max-w-2xl mx-auto text-gray-400 text-base sm:text-lg mb-10 leading-relaxed">
+                Passionate developer, AI experimenter, and gamer crafting next-gen Discord bots, intelligent web applications, and immersive game experiences.
+            </p>
 
+            <!-- Call to Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold hover:shadow-neon-cyan hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
+                    <i class="fas fa-code"></i>
+                    <span>Explore Projects</span>
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel hover:bg-white/10 text-gray-200 font-semibold border border-white/10 hover:border-cyan-500/50 transition-all duration-300 flex items-center justify-center space-x-2">
+                    <i class="fas fa-paper-plane text-cyan-400"></i>
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+
+            <!-- Quick Social Bar -->
+            <div class="flex items-center justify-center space-x-6 mt-12 text-gray-400">
+                <a href="https://github.com/Snowqex25" target="_blank" class="w-11 h-11 rounded-xl glass-panel flex items-center justify-center hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-neon-cyan transition-all duration-300 text-lg">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://discord.com" target="_blank" class="w-11 h-11 rounded-xl glass-panel flex items-center justify-center hover:text-purple-400 hover:border-purple-500/50 hover:shadow-neon-purple transition-all duration-300 text-lg">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://soundcloud.com" target="_blank" class="w-11 h-11 rounded-xl glass-panel flex items-center justify-center hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300 text-lg">
+                    <i class="fab fa-soundcloud"></i>
+                </a>
+                <a href="mailto:contact@snowqex25.dev" class="w-11 h-11 rounded-xl glass-panel flex items-center justify-center hover:text-purple-400 hover:border-purple-500/50 hover:shadow-neon-purple transition-all duration-300 text-lg">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section id="about" class="py-24 bg-cardBg/40 border-y border-slate-800/60 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accentCyan">เกี่ยวกับตัวตนของฉัน</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight">ผสมผสานโค้ด ดนตรี และความหลงใหลในเกมเข้าด้วยกัน</h3>
-                <p class="text-slate-400 text-sm sm:text-base">
-                    ผมเป็นคนรุ่นใหม่ที่ชื่นชอบการสร้างสรรค์สิ่งใหม่ๆ ไม่ว่าจะเป็นการพัฒนาเว็บแอปพลิเคชัน การแต่งเพลงล้ำๆ การเขียนม็อดเกม หรือการใช้ AI เพื่อเพิ่มประสิทธิภาพการทำงาน
-                </p>
+    <!-- About Me Section -->
+    <section id="about" class="py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+                    About <span class="text-cyan-400">Me</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Get to know the developer behind the code and creations.</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto mt-4 rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="p-8 rounded-2xl bg-cardBg border border-slate-800 hover:border-accentCyan/50 transition-all group hover:-translate-y-1 shadow-lg">
-                    <div class="w-14 h-14 rounded-xl bg-accentCyan/10 text-accentCyan flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-code"></i>
+                <div class="glass-panel p-8 rounded-3xl border border-white/5 hover:border-cyan-500/40 transition-all duration-500 group shadow-lg hover:shadow-neon-cyan">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-author group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-white">Coding & Development</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        พัฒนาเว็บไซต์และเครื่องมือต่างๆ ด้วยเทคโนโลยีสมัยใหม่ เน้นความเร็ว ประสบการณ์ผู้ใช้ที่ยอดเยี่ยม และโค้ดที่มีระเบียบเรียบร้อย
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors">Developer & Creator</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Building responsive web apps, utilizing GitHub Copilot workflows for lightning-fast feature delivery, and managing databases with Supabase.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="p-8 rounded-2xl bg-cardBg border border-slate-800 hover:border-accentPurple/50 transition-all group hover:-translate-y-1 shadow-lg">
-                    <div class="w-14 h-14 rounded-xl bg-accentPurple/10 text-accentPurple flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-headphones-simple"></i>
+                <div class="glass-panel p-8 rounded-3xl border border-white/5 hover:border-purple-500/40 transition-all duration-500 group shadow-lg hover:shadow-neon-purple">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-white">Music Production</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        สร้างสรรค์บีทและผลงานเพลงผ่าน BandLab ผสมผสานเสียงดนตรีสไตล์โมเดิร์น โล-ฟี และอิเล็กทรอนิกส์เข้าด้วยกันอย่างลงตัว
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors">AI & Bots Innovator</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Experimenting with cutting-edge AI models, prompting tools, and engineering feature-rich Discord bots that automate communities and boost engagement.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="p-8 rounded-2xl bg-cardBg border border-slate-800 hover:border-accentPink/50 transition-all group hover:-translate-y-1 shadow-lg">
-                    <div class="w-14 h-14 rounded-xl bg-accentPink/10 text-accentPink flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-gamepad"></i>
+                <div class="glass-panel p-8 rounded-3xl border border-white/5 hover:border-cyan-500/40 transition-all duration-500 group shadow-lg hover:shadow-neon-cyan">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-gamepad"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-white">Gaming & Modding</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        เกมเมอร์ตัวยงที่ชื่นชอบเกมแนว MMORPG เช่น Albion Online รวมถึงการสร้างสรรค์และปรับแต่ง Game Mods เพื่อประสบการณ์ที่สนุกยิ่งขึ้น
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors">Gamer & Audio Designer</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Crafting game mods for immersive gameplay, producing beats on BandLab, and diving into competitive and atmospheric gaming worlds.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accentCyan">ทักษะและความเชี่ยวชาญ</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight">เครื่องมือและเทคโนโลยีที่ใช้งาน</h3>
-                <p class="text-slate-400 text-sm sm:text-base">
-                    ทักษะรอบด้านที่ครอบคลุมทั้งสายเขียนโค้ด งานดนตรี ครีเอเตอร์ และการประยุกต์ใช้งาน AI
-                </p>
+    <!-- Skills & Tech Stack Section -->
+    <section id="skills" class="py-20 px-4 bg-cardBg/30 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+                    Tech Stack & <span class="text-purple-400">Skills</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Tools and technologies I use to bring ideas to life.</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Skill Group 1 -->
-                <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="p-2.5 rounded-xl bg-cyan-500/10 text-accentCyan">
-                            <i class="fa-solid fa-laptop-code text-lg"></i>
-                        </div>
-                        <h4 class="font-bold text-base text-white">Programming</h4>
-                    </div>
-                    <div class="space-y-3 pt-2 text-sm text-slate-300 font-mono">
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>HTML5 / CSS3 / JS</span><span class="text-accentCyan">90%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-accentCyan h-2 rounded-full" style="width: 90%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Python / Scripting</span><span class="text-accentCyan">80%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-accentCyan h-2 rounded-full" style="width: 80%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Tailwind CSS</span><span class="text-accentCyan">85%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-accentCyan h-2 rounded-full" style="width: 85%"></div></div>
-                        </div>
-                    </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Skill 1 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-cyan-500/50 hover:shadow-neon-cyan transition-all duration-300 group">
+                    <i class="fab fa-github text-4xl text-gray-300 group-hover:text-cyan-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">GitHub</span>
                 </div>
-
-                <!-- Skill Group 2 -->
-                <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="p-2.5 rounded-xl bg-purple-500/10 text-accentPurple">
-                            <i class="fa-solid fa-music text-lg"></i>
-                        </div>
-                        <h4 class="font-bold text-base text-white">Music Production</h4>
-                    </div>
-                    <div class="space-y-3 pt-2 text-sm text-slate-300 font-mono">
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>BandLab Studio</span><span class="text-accentPurple">90%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-accentPurple h-2 rounded-full" style="width: 90%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Beatmaking / MIDI</span><span class="text-accentPurple">85%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-accentPurple h-2 rounded-full" style="width: 85%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Audio Editing</span><span class="text-accentPurple">80%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-accentPurple h-2 rounded-full" style="width: 80%"></div></div>
-                        </div>
-                    </div>
+                <!-- Skill 2 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-purple-500/50 hover:shadow-neon-purple transition-all duration-300 group">
+                    <i class="fas fa-wand-magic-sparkles text-4xl text-gray-300 group-hover:text-purple-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">Copilot / AI</span>
                 </div>
-
-                <!-- Skill Group 3 -->
-                <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="p-2.5 rounded-xl bg-pink-500/10 text-accentPink">
-                            <i class="fa-solid fa-gamepad text-lg"></i>
-                        </div>
-                        <h4 class="font-bold text-base text-white">Gaming & Modding</h4>
-                    </div>
-                    <div class="space-y-3 pt-2 text-sm text-slate-300 font-mono">
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Albion Online Tactics</span><span class="text-accentPink">95%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-accentPink h-2 rounded-full" style="width: 95%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Game Modding</span><span class="text-accentPink">85%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-accentPink h-2 rounded-full" style="width: 85%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Community Setup</span><span class="text-accentPink">90%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-accentPink h-2 rounded-full" style="width: 90%"></div></div>
-                        </div>
-                    </div>
+                <!-- Skill 3 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-cyan-500/50 hover:shadow-neon-cyan transition-all duration-300 group">
+                    <i class="fas fa-database text-4xl text-gray-300 group-hover:text-cyan-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">Supabase</span>
                 </div>
-
-                <!-- Skill Group 4 -->
-                <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-400">
-                            <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
-                        </div>
-                        <h4 class="font-bold text-base text-white">AI & Creator Tools</h4>
-                    </div>
-                    <div class="space-y-3 pt-2 text-sm text-slate-300 font-mono">
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Prompt Engineering</span><span class="text-amber-400">95%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-amber-400 h-2 rounded-full" style="width: 95%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Content Creation</span><span class="text-amber-400">85%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-amber-400 h-2 rounded-full" style="width: 85%"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1"><span>Workflow Automation</span><span class="text-amber-400">80%</span></div>
-                            <div class="w-full bg-darkBg rounded-full h-2"><div class="bg-amber-400 h-2 rounded-full" style="width: 80%"></div></div>
-                        </div>
-                    </div>
+                <!-- Skill 4 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-purple-500/50 hover:shadow-neon-purple transition-all duration-300 group">
+                    <i class="fab fa-discord text-4xl text-gray-300 group-hover:text-purple-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">Discord Bots</span>
+                </div>
+                <!-- Skill 5 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-cyan-500/50 hover:shadow-neon-cyan transition-all duration-300 group">
+                    <i class="fab fa-js text-4xl text-gray-300 group-hover:text-cyan-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">JavaScript</span>
+                </div>
+                <!-- Skill 6 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-purple-500/50 hover:shadow-neon-purple transition-all duration-300 group">
+                    <i class="fab fa-python text-4xl text-gray-300 group-hover:text-purple-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">Python</span>
+                </div>
+                <!-- Skill 7 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-cyan-500/50 hover:shadow-neon-cyan transition-all duration-300 group">
+                    <i class="fab fa-html5 text-4xl text-gray-300 group-hover:text-cyan-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">HTML5/CSS3</span>
+                </div>
+                <!-- Skill 8 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-purple-500/50 hover:shadow-neon-purple transition-all duration-300 group">
+                    <i class="fas fa-gamepad text-4xl text-gray-300 group-hover:text-purple-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">Game Mods</span>
+                </div>
+                <!-- Skill 9 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-cyan-500/50 hover:shadow-neon-cyan transition-all duration-300 group">
+                    <i class="fas fa-music text-4xl text-gray-300 group-hover:text-cyan-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">BandLab</span>
+                </div>
+                <!-- Skill 10 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-purple-500/50 hover:shadow-neon-purple transition-all duration-300 group">
+                    <i class="fas fa-terminal text-4xl text-gray-300 group-hover:text-purple-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">Node.js</span>
+                </div>
+                <!-- Skill 11 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-cyan-500/50 hover:shadow-neon-cyan transition-all duration-300 group">
+                    <i class="fas fa-wind text-4xl text-gray-300 group-hover:text-cyan-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">Tailwind</span>
+                </div>
+                <!-- Skill 12 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 border border-white/5 hover:border-purple-500/50 hover:shadow-neon-purple transition-all duration-300 group">
+                    <i class="fas fa-shield-halved text-4xl text-gray-300 group-hover:text-purple-400 transition-colors"></i>
+                    <span class="font-mono text-sm font-semibold text-gray-300">Git & CLI</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 bg-cardBg/40 border-y border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accentCyan">ผลงานที่ผ่านมา</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight">โปรเจกต์เด่นและการสร้างสรรค์</h3>
-                <p class="text-slate-400 text-sm sm:text-base">
-                    รวมโปรเจกต์การเขียนโค้ด ผลงานเพลง และม็อดเกมที่สร้างสรรค์ขึ้นด้วยความตั้งใจ
-                </p>
+    <!-- Projects Section with Filter Tabs -->
+    <section id="projects" class="py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+                    Featured <span class="text-cyan-400">Projects</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Explore my latest creations, bots, mods, and web apps.</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="rounded-2xl bg-cardBg border border-slate-800 overflow-hidden group hover:border-accentCyan/50 transition-all flex flex-col shadow-lg">
-                    <div class="h-48 bg-gradient-to-br from-blue-900/40 via-indigo-900/40 to-slate-900 relative flex items-center justify-center p-6 border-b border-slate-800">
-                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-accentCyan/10 text-accentCyan text-xs font-mono">Coding</div>
-                        <i class="fa-solid fa-code text-5xl text-accentCyan/80 group-hover:scale-110 transition-transform"></i>
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+                <button onclick="filterProjects('all')" class="filter-btn active-filter px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 bg-cyan-500 text-black font-bold shadow-neon-cyan">
+                    All Projects
+                </button>
+                <button onclick="filterProjects('bots')" class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-gray-300 hover:text-cyan-400 hover:border-cyan-500/40">
+                    Discord Bots
+                </button>
+                <button onclick="filterProjects('web')" class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-gray-300 hover:text-cyan-400 hover:border-cyan-500/40">
+                    Web Apps & AI
+                </button>
+                <button onclick="filterProjects('mods')" class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-gray-300 hover:text-cyan-400 hover:border-cyan-500/40">
+                    Game Mods & Creator
+                </button>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1: Discord Bot -->
+                <div class="project-card glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-cyan-500/50 transition-all duration-500 group flex flex-col shadow-lg hover:shadow-neon-cyan" data-category="bots">
+                    <div class="h-48 overflow-hidden relative bg-gradient-to-tr from-purple-900/30 to-cyan-900/30">
+                        <img src="https://placehold.co/600x400/121826/7f00ff?text=🤖+Discord+Bot" alt="Discord Bot" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-purple-400">
+                            Bots
+                        </div>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div class="space-y-2">
-                            <h4 class="text-xl font-bold text-white">Modern Dev Dashboard</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                แดชบอร์ดเว็บแอปพลิเคชันที่ออกแบบด้วย Tailwind CSS สำหรับจัดการข้อมูลและแสดงผลสถิติแบบเรียลไทม์
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors">Nexus AI Discord Bot</h3>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Advanced multi-purpose Discord bot featuring AI chat integration, automated moderation, custom music streaming, and interactive games.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                            <span class="text-xs font-mono text-slate-500">HTML / JS / Tailwind</span>
-                            <a href="https://github.com" target="_blank" class="text-accentCyan hover:underline text-sm font-medium flex items-center gap-1.5">
-                                GitHub <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                            </a>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">Node.js</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-purple-400">Discord.js</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">Supabase</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="https://github.com/Snowqex25" target="_blank" class="flex-1 text-center py-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-semibold transition-all">
+                                    <i class="fab fa-github mr-2"></i> Code
+                                </a>
+                                <a href="#contact" class="flex-1 text-center py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black text-sm font-bold hover:shadow-neon-cyan transition-all">
+                                    <i class="fas fa-info-circle mr-2"></i> Details
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="rounded-2xl bg-cardBg border border-slate-800 overflow-hidden group hover:border-accentPurple/50 transition-all flex flex-col shadow-lg">
-                    <div class="h-48 bg-gradient-to-br from-purple-900/40 via-violet-900/40 to-slate-900 relative flex items-center justify-center p-6 border-b border-slate-800">
-                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-accentPurple/10 text-accentPurple text-xs font-mono">Music / BandLab</div>
-                        <i class="fa-solid fa-headphones text-5xl text-accentPurple/80 group-hover:scale-110 transition-transform"></i>
+                <!-- Project 2: Web App & AI -->
+                <div class="project-card glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-purple-500/50 transition-all duration-500 group flex flex-col shadow-lg hover:shadow-neon-purple" data-category="web">
+                    <div class="h-48 overflow-hidden relative bg-gradient-to-tr from-cyan-900/30 to-blue-900/30">
+                        <img src="https://placehold.co/600x400/121826/00f2fe?text=✨+AI+Dashboard" alt="AI Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-cyan-400">
+                            Web / AI
+                        </div>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div class="space-y-2">
-                            <h4 class="text-xl font-bold text-white">BandLab Beats & Mixes</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                คอลเลกชันบีทเพลงและมิกซ์เสียงแนว Lo-Fi & Electronic ที่โปรดิวซ์และมิกซ์เสียงเองทั้งหมดผ่านแพลตฟอร์ม BandLab
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">SnowPrompt AI Studio</h3>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Sleek dashboard built with Tailwind and Supabase to test, save, and refine AI prompt engineering workflows instantly with GitHub Copilot.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                            <span class="text-xs font-mono text-slate-500">BandLab / Audio</span>
-                            <a href="https://bandlab.com" target="_blank" class="text-accentPurple hover:underline text-sm font-medium flex items-center gap-1.5">
-                                ฟังเพลง <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                            </a>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">Tailwind</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-purple-400">JavaScript</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">Supabase</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="https://github.com/Snowqex25" target="_blank" class="flex-1 text-center py-2.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-400 text-sm font-semibold transition-all">
+                                    <i class="fab fa-github mr-2"></i> Code
+                                </a>
+                                <a href="#contact" class="flex-1 text-center py-2.5 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 text-white text-sm font-bold hover:shadow-neon-purple transition-all">
+                                    <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="rounded-2xl bg-cardBg border border-slate-800 overflow-hidden group hover:border-accentPink/50 transition-all flex flex-col shadow-lg">
-                    <div class="h-48 bg-gradient-to-br from-pink-900/40 via-rose-900/40 to-slate-900 relative flex items-center justify-center p-6 border-b border-slate-800">
-                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-accentPink/10 text-accentPink text-xs font-mono">Gaming & Mods</div>
-                        <i class="fa-solid fa-gamepad text-5xl text-accentPink/80 group-hover:scale-110 transition-transform"></i>
+                <!-- Project 3: Game Mods -->
+                <div class="project-card glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-cyan-500/50 transition-all duration-500 group flex flex-col shadow-lg hover:shadow-neon-cyan" data-category="mods">
+                    <div class="h-48 overflow-hidden relative bg-gradient-to-tr from-blue-900/30 to-purple-900/30">
+                        <img src="https://placehold.co/600x400/121826/4facfe?text=🎮+Game+Mods" alt="Game Mods" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-blue-400">
+                            Mods
+                        </div>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div class="space-y-2">
-                            <h4 class="text-xl font-bold text-white">Albion Mod & Helper Pack</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                ชุดคอลเลกชันคำแนะนำ เทคนิคการเล่น และม็อดปรับแต่ง UI เกม Albion Online เพื่อความสะดวกในการเล่นของผู้เล่น
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors">Frostbite Game Overhaul</h3>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Custom mod pack providing enhanced atmospheric lighting, user interface customization, and optimized gameplay performance scripts.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                            <span class="text-xs font-mono text-slate-500">Game Utility</span>
-                            <a href="https://github.com" target="_blank" class="text-accentPink hover:underline text-sm font-medium flex items-center gap-1.5">
-                                รายละเอียด <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                            </a>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">Lua / C++</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-blue-400">Modding</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-purple-400">UI/UX</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="https://github.com/Snowqex25" target="_blank" class="flex-1 text-center py-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-semibold transition-all">
+                                    <i class="fab fa-github mr-2"></i> Code
+                                </a>
+                                <a href="#contact" class="flex-1 text-center py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black text-sm font-bold hover:shadow-neon-cyan transition-all">
+                                    <i class="fas fa-download mr-2"></i> Download
+                                </a>
+                            </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Audio / BandLab Creation -->
+                <div class="project-card glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-purple-500/50 transition-all duration-500 group flex flex-col shadow-lg hover:shadow-neon-purple" data-category="mods">
+                    <div class="h-48 overflow-hidden relative bg-gradient-to-tr from-purple-900/30 to-pink-900/30">
+                        <img src="https://placehold.co/600x400/121826/ff007f?text=🎵+Cyber+Soundtracks" alt="Soundtracks" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-pink-400">
+                            Audio / Creator
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Neon Beats & Soundtracks</h3>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Electronic and synthwave soundtracks composed and produced on BandLab, tailored for indie game developers and streaming background audio.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-pink-400">BandLab</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-purple-400">Synthwave</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">Audio</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="https://soundcloud.com" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-400 text-sm font-semibold transition-all">
+                                    <i class="fab fa-soundcloud mr-2"></i> Listen on SoundCloud
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Portfolio Site -->
+                <div class="project-card glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-cyan-500/50 transition-all duration-500 group flex flex-col shadow-lg hover:shadow-neon-cyan" data-category="web">
+                    <div class="h-48 overflow-hidden relative bg-gradient-to-tr from-cyan-900/30 to-purple-900/30">
+                        <img src="https://placehold.co/600x400/121826/00f2fe?text=🌐+Portfolio" alt="Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-cyan-400">
+                            Web App
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors">GitHub Pages Portfolio</h3>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Fully responsive single-file modern portfolio website hosted seamlessly on GitHub Pages with glowing neon dark-mode aesthetic.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">HTML5</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-purple-400">Tailwind</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">GitHub Pages</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="https://github.com/Snowqex25" target="_blank" class="flex-1 text-center py-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-semibold transition-all">
+                                    <i class="fab fa-github mr-2"></i> Source
+                                </a>
+                                <a href="#" class="flex-1 text-center py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black text-sm font-bold hover:shadow-neon-cyan transition-all">
+                                    <i class="fas fa-check mr-2"></i> Active
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: AI Automations -->
+                <div class="project-card glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-purple-500/50 transition-all duration-500 group flex flex-col shadow-lg hover:shadow-neon-purple" data-category="web">
+                    <div class="h-48 overflow-hidden relative bg-gradient-to-tr from-purple-900/30 to-blue-900/30">
+                        <img src="https://placehold.co/600x400/121826/7f00ff?text=⚡+CLI+Tools" alt="CLI Tools" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-purple-400">
+                            AI / Tools
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors">Copilot CLI Automation Suite</h3>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Command-line utilities designed to streamline repository management, automated commit logs, and intelligent code review suggestions.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-purple-400">Python</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">CLI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-purple-400">GitHub API</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="https://github.com/Snowqex25" target="_blank" class="flex-1 text-center py-2.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-400 text-sm font-semibold transition-all">
+                                    <i class="fab fa-github mr-2"></i> Code
+                                </a>
+                                <a href="#contact" class="flex-1 text-center py-2.5 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 text-white text-sm font-bold hover:shadow-neon-purple transition-all">
+                                    <i class="fas fa-info-circle mr-2"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Stats Showcase -->
+    <section id="stats" class="py-20 px-4 bg-cardBg/30 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+                    GitHub <span class="text-cyan-400">Activity</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Real-time stats and metrics directly from GitHub.</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Stats Card -->
+                <div class="glass-panel p-8 rounded-3xl border border-white/5 shadow-neon-box flex flex-col justify-center space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Snowqex25 / GitHub</h4>
+                            <p class="text-sm text-gray-400">Open source contributor & builder</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">15+</div>
+                            <div class="text-xs text-gray-400 mt-1">Public Repos</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-purple-400 font-mono">500+</div>
+                            <div class="text-xs text-gray-400 mt-1">Total Commits</div>
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/Snowqex25" target="_blank" class="w-full text-center py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-black font-bold hover:shadow-neon-cyan transition-all flex items-center justify-center space-x-2">
+                        <i class="fab fa-github"></i>
+                        <span>Visit GitHub Profile</span>
+                    </a>
+                </div>
+
+                <!-- GitHub Streak / Card Graphic -->
+                <div class="glass-panel p-6 rounded-3xl border border-white/5 flex flex-col items-center justify-center space-y-4">
+                    <div class="w-full text-left font-mono text-sm text-cyan-400 mb-2 flex items-center space-x-2">
+                        <i class="fas fa-terminal"></i>
+                        <span>github-stats-preview.svg</span>
+                    </div>
+                    <div class="w-full overflow-hidden rounded-2xl bg-darkBg/80 p-4 border border-white/10 flex flex-col items-center justify-center space-y-4">
+                        <img src="https://github-readme-stats.vercel.app/api?username=Snowqex25&show_icons=true&theme=tokyonight&hide_border=true&bg_color=121826&title_color=00f2fe&icon_color=7f00ff&text_color=d1d5db" alt="Snowqex25 GitHub Stats" class="w-full max-w-md rounded-xl" onerror="this.src='https://placehold.co/500x200/121826/00f2fe?text=GitHub+Stats+Card'">
+                        <img src="https://github-readme-streak-stats.herokuapp.com/?user=Snowqex25&theme=tokyonight&hide_border=true&background=121826&stroke=00f2fe&ring=7f00ff&fire=00f2fe&currStreakLabel=00f2fe" alt="GitHub Streak" class="w-full max-w-md rounded-xl" onerror="this.src='https://placehold.co/500x200/121826/7f00ff?text=GitHub+Streak+Card'">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="gaming" class="py-24 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="rounded-3xl bg-gradient-to-r from-cardBg via-slate-900 to-cardBg border border-slate-800 p-8 sm:p-12 relative shadow-2xl">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-accentCyan/5 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+                    Get in <span class="text-cyan-400">Touch</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Have a project in mind, want to collaborate, or just say hi? Drop a message!</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto mt-4 rounded-full"></div>
+            </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-7 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentPink/10 text-accentPink text-xs font-mono">
-                            <i class="fa-solid fa-headset"></i> Gaming & Creator Lounge
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Contact Info 1 -->
+                <div class="glass-panel p-6 rounded-2xl text-center border border-white/5 hover:border-cyan-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 mx-auto flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-1">Email Me</h4>
+                    <p class="text-xs text-gray-400 font-mono">contact@snowqex25.dev</p>
+                </div>
+                <!-- Contact Info 2 -->
+                <div class="glass-panel p-6 rounded-2xl text-center border border-white/5 hover:border-purple-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 mx-auto flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-1">Discord</h4>
+                    <p class="text-xs text-gray-400 font-mono">@Snowqex25</p>
+                </div>
+                <!-- Contact Info 3 -->
+                <div class="glass-panel p-6 rounded-2xl text-center border border-white/5 hover:border-cyan-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 mx-auto flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-1">GitHub</h4>
+                    <p class="text-xs text-gray-400 font-mono">github.com/Snowqex25</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 shadow-neon-box relative">
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-mono text-cyan-400 mb-2">YOUR NAME</label>
+                            <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-darkBg/70 border border-white/10 focus:border-cyan-500 focus:outline-none text-white text-sm transition-all">
                         </div>
-                        <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Albion Online, Music & Community</h3>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                            นอกจากการเขียนโค้ดแล้ว ผมใช้เวลาส่วนใหญ่ไปกับการผจญภัยในโลกของ <span class="text-accentCyan font-semibold">Albion Online</span> วางแผนกิลด์ จัดการทรัพยากร และสร้างสรรค์เสียงดนตรีผ่าน BandLab พร้อมพูดคุยแลกเปลี่ยนเทคนิคกับเพื่อนๆ ในคอมมูนิตี้อยู่เสมอ
-                        </p>
-                        <div class="flex flex-wrap gap-4 pt-2">
-                            <div class="px-4 py-2 rounded-xl bg-darkBg border border-slate-800 text-xs font-mono text-slate-300 flex items-center gap-2">
-                                <i class="fa-brands fa-discord text-indigo-400"></i> Discord Active
-                            </div>
-                            <div class="px-4 py-2 rounded-xl bg-darkBg border border-slate-800 text-xs font-mono text-slate-300 flex items-center gap-2">
-                                <i class="fa-solid fa-music text-accentPurple"></i> BandLab Creator
-                            </div>
+                        <div>
+                            <label class="block text-xs font-mono text-cyan-400 mb-2">YOUR EMAIL</label>
+                            <input type="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-darkBg/70 border border-white/10 focus:border-cyan-500 focus:outline-none text-white text-sm transition-all">
                         </div>
                     </div>
-
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="w-full p-6 rounded-2xl bg-darkBg border border-slate-800 space-y-4">
-                            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs font-mono text-slate-400">
-                                <span>GAMING & CREATOR STATUS</span>
-                                <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ONLINE</span>
-                            </div>
-                            <div class="space-y-3 text-sm">
-                                <div class="flex items-center justify-between text-slate-300">
-                                    <span class="text-slate-400">Current Game:</span>
-                                    <span class="font-bold text-accentCyan">Albion Online</span>
-                                </div>
-                                <div class="flex items-center justify-between text-slate-300">
-                                    <span class="text-slate-400">Music Platform:</span>
-                                    <span class="font-bold text-accentPurple">BandLab</span>
-                                </div>
-                                <div class="flex items-center justify-between text-slate-300">
-                                    <span class="text-slate-400">AI Tooling:</span>
-                                    <span class="font-bold text-amber-400">Advanced Prompts</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <label class="block text-xs font-mono text-cyan-400 mb-2">SUBJECT</label>
+                        <input type="text" required placeholder="Collaboration / Project Inquiry" class="w-full px-4 py-3 rounded-xl bg-darkBg/70 border border-white/10 focus:border-cyan-500 focus:outline-none text-white text-sm transition-all">
                     </div>
+                    <div>
+                        <label class="block text-xs font-mono text-cyan-400 mb-2">MESSAGE</label>
+                        <textarea rows="5" required placeholder="Hello Snow, I'd like to talk about..." class="w-full px-4 py-3 rounded-xl bg-darkBg/70 border border-white/10 focus:border-cyan-500 focus:outline-none text-white text-sm transition-all resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-black font-extrabold hover:shadow-neon-cyan transition-all duration-300 flex items-center justify-center space-x-2">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send Message</span>
+                    </button>
+                </form>
+
+                <!-- Success Message Toast (Custom alert alternative) -->
+                <div id="toast-message" class="hidden mt-6 p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/40 text-cyan-300 text-sm flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-cyan-400 text-lg"></i>
+                        <span>Thank you! Your message has been sent successfully. Snow will get back to you soon.</span>
+                    </div>
+                    <button onclick="hideToast()" class="text-cyan-400 hover:text-white"><i class="fas fa-times"></i></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-cardBg/40 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="max-w-2xl mx-auto space-y-6">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accentCyan">ช่องทางการติดต่อ</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight">มาร่วมพูดคุยหรือสร้างโปรเจกต์ด้วยกัน</h3>
-                <p class="text-slate-400 text-sm sm:text-base">
-                    คุณสามารถติดต่อผมผ่านทาง GitHub, Discord หรือโซเชียลมีเดียอื่นๆ ได้ตลอดเวลา ยินดีที่ได้รู้จักครับ!
-                </p>
-
-                <!-- Social Links Grid -->
-                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-                    <a href="https://github.com" target="_blank" class="px-6 py-3 rounded-xl bg-cardBg hover:bg-slate-800 border border-slate-800 hover:border-accentCyan text-slate-200 font-medium flex items-center gap-2.5 transition-all hover:scale-105 shadow-md">
-                        <i class="fa-brands fa-github text-xl text-white"></i> GitHub
-                    </a>
-                    <a href="https://discord.com" target="_blank" class="px-6 py-3 rounded-xl bg-cardBg hover:bg-slate-800 border border-slate-800 hover:border-indigo-500 text-slate-200 font-medium flex items-center gap-2.5 transition-all hover:scale-105 shadow-md">
-                        <i class="fa-brands fa-discord text-xl text-indigo-400"></i> Discord
-                    </a>
-                    <a href="https://bandlab.com" target="_blank" class="px-6 py-3 rounded-xl bg-cardBg hover:bg-slate-800 border border-slate-800 hover:border-accentPurple text-slate-200 font-medium flex items-center gap-2.5 transition-all hover:scale-105 shadow-md">
-                        <i class="fa-solid fa-music text-xl text-accentPurple"></i> BandLab
-                    </a>
-                    <a href="mailto:your.email@example.com" class="px-6 py-3 rounded-xl bg-cardBg hover:bg-slate-800 border border-slate-800 hover:border-accentPink text-slate-200 font-medium flex items-center gap-2.5 transition-all hover:scale-105 shadow-md">
-                        <i class="fa-regular fa-envelope text-xl text-accentPink"></i> Email Me
-                    </a>
-                </div>
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/10 glass-panel text-center text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="font-mono text-cyan-400">&gt;</span>
+                <span>Designed & Built by <strong class="text-white">Snow Allen (Snowqex25)</strong></span>
             </div>
-        </div>
-    </section>
-
-    <footer class="py-8 bg-darkBg border-t border-slate-800/80 text-center text-xs text-slate-500 font-mono">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>&copy; 2026 Portfolio. All rights reserved. Ready for GitHub Pages.</p>
-            <p>Designed with <i class="fa-solid fa-heart text-accentPink"></i> & Tailwind CSS</p>
+            <div class="flex items-center space-x-6">
+                <a href="https://github.com/Snowqex25" target="_blank" class="hover:text-cyan-400 transition-colors"><i class="fab fa-github text-lg"></i></a>
+                <a href="https://discord.com" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fab fa-discord text-lg"></i></a>
+                <a href="https://soundcloud.com" target="_blank" class="hover:text-cyan-400 transition-colors"><i class="fab fa-soundcloud text-lg"></i></a>
+            </div>
+            <div class="text-xs text-gray-500 font-mono">
+                © 2026 Snowqex25. All rights reserved.
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript for Interactivity -->
     <script>
-        // Toggle mobile menu
-        const menuBtn = document.getElementById('menu-btn');
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        menuBtn.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
+        });
+
+        // Typing Effect for Hero Subtitle
+        const words = ["Developer", "Creator", "Gamer", "AI Enthusiast", "Discord Bot Builder"];
+        let i = 0;
+        let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typing-text').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return false;
+                }
+                timer = setTimeout(loopTyping, 100);
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typing-text').innerHTML = word.join("");
+                } else {
+                    if (words.length > (i + 1)) {
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                    setTimeout(typingEffect, 500);
+                    return false;
+                }
+                timer = setTimeout(loopDeleting, 50);
+            };
+            loopDeleting();
+        }
+
+        typingEffect();
+
+        // Project Filter Functionality
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button styling
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-cyan-500', 'text-black', 'font-bold', 'shadow-neon-cyan');
+                btn.classList.add('glass-panel', 'text-gray-300');
+            });
+            event.target.classList.remove('glass-panel', 'text-gray-300');
+            event.target.classList.add('bg-cyan-500', 'text-black', 'font-bold', 'shadow-neon-cyan');
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Contact Form Handler with Custom Message Box (No alert)
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast-message');
+            toast.classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+            
+            setTimeout(() => {
+                toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        function hideToast() {
+            document.getElementById('toast-message').classList.add('hidden');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-darkBg/90', 'shadow-lg');
+            } else {
+                nav.classList.remove('bg-darkBg/90', 'shadow-lg');
+            }
         });
     </script>
 </body>
