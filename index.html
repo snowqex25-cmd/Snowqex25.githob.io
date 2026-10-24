@@ -1,62 +1,58 @@
 <!doctype html>
-<html lang="th" data-theme="dark">
+<html lang="th" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b12">
-  <meta name="description" content="Snowqex25 — นักพัฒนาเว็บ บอท และเครื่องมือดิจิทัลที่ชอบทำไอเดียให้กลายเป็นของจริง">
-  <meta property="og:title" content="Snowqex25 — Digital Lab">
+  <meta name="theme-color" content="#f5f3ee">
+  <meta name="description" content="Snowqex25 — นักพัฒนาเว็บและ Discord Bot ที่เปลี่ยนไอเดียให้เป็นประสบการณ์ดิจิทัลที่ใช้งานได้จริง">
+  <meta property="og:title" content="Snowqex25 — Digital Portfolio">
   <meta property="og:description" content="Web experiences, bots, and useful digital tools.">
   <meta property="og:type" content="website">
-  <title>Snowqex25 — Digital Lab</title>
+  <title>Snowqex25 — Digital Portfolio</title>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #080b12;
-      --bg-soft: #0c111b;
-      --surface: rgba(18, 25, 38, .78);
-      --surface-strong: #121a27;
-      --line: rgba(183, 199, 221, .12);
-      --line-strong: rgba(183, 199, 221, .22);
-      --text: #edf2f8;
-      --muted: #9aa8ba;
-      --faint: #667488;
-      --accent: #b8ff67;
-      --accent-2: #77e8e6;
-      --violet: #a78bfa;
-      --shadow: 0 24px 70px rgba(0, 0, 0, .36);
-      --radius: 22px;
+      color-scheme: light;
+      --bg: #f5f3ee;
+      --paper: #fffefa;
+      --paper-2: #f0eee8;
+      --ink: #20231f;
+      --ink-soft: #444942;
+      --muted: #737970;
+      --faint: #9a9e96;
+      --line: #dedfd7;
+      --line-strong: #c9ccc3;
+      --accent: #3159d8;
+      --accent-soft: #e8edff;
+      --lime: #d3ec79;
+      --shadow: 0 22px 60px rgba(36, 42, 33, .08);
+      --radius: 20px;
       --max: 1160px;
     }
-    html[data-theme="light"] {
-      color-scheme: light;
-      --bg: #f3f6f8;
-      --bg-soft: #eaf0f2;
-      --surface: rgba(255, 255, 255, .8);
-      --surface-strong: #fff;
-      --line: rgba(29, 50, 65, .12);
-      --line-strong: rgba(29, 50, 65, .22);
-      --text: #13212b;
-      --muted: #536675;
-      --faint: #718390;
-      --accent: #4b9c13;
-      --accent-2: #087e86;
-      --violet: #6c50c9;
-      --shadow: 0 24px 70px rgba(31, 58, 68, .12);
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #171a18;
+      --paper: #202421;
+      --paper-2: #292e2a;
+      --ink: #f0f1e9;
+      --ink-soft: #d2d5cb;
+      --muted: #a6ada1;
+      --faint: #737b70;
+      --line: #343a34;
+      --line-strong: #4b524a;
+      --accent: #a9bbff;
+      --accent-soft: #29334e;
+      --lime: #d3ec79;
+      --shadow: 0 22px 60px rgba(0, 0, 0, .24);
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 92px; }
     body {
       margin: 0;
       min-width: 320px;
-      color: var(--text);
-      background:
-        radial-gradient(ellipse at 12% 5%, rgba(119, 232, 230, .08), transparent 32rem),
-        radial-gradient(ellipse at 90% 28%, rgba(167, 139, 250, .08), transparent 30rem),
-        var(--bg);
-      font-family: Inter, "Noto Sans Thai", Tahoma, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: Inter, "Noto Sans Thai", "Leelawadee UI", Tahoma, sans-serif;
       line-height: 1.65;
-      overflow-x: hidden;
       transition: background .25s ease, color .25s ease;
     }
     body::before {
@@ -65,231 +61,202 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      opacity: .16;
-      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: linear-gradient(to bottom, black, transparent 68%);
+      opacity: .36;
+      background-image: radial-gradient(var(--line-strong) .55px, transparent .55px);
+      background-size: 8px 8px;
+      mask-image: linear-gradient(to bottom, #000, transparent 58%);
     }
     a { color: inherit; text-decoration: none; }
     button, input, textarea { font: inherit; }
     button { color: inherit; }
-    button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible {
-      outline: 2px solid var(--accent-2);
+    button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--accent);
       outline-offset: 4px;
     }
-    ::selection { color: #08100a; background: var(--accent); }
-    .wrap { width: min(var(--max), calc(100% - 44px)); margin-inline: auto; }
-    .skip-link { position: absolute; top: -60px; left: 16px; z-index: 100; padding: 10px 14px; border-radius: 10px; color: #07100a; background: var(--accent); }
+    ::selection { color: #fff; background: var(--accent); }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .skip-link { position: absolute; top: -60px; left: 16px; z-index: 100; padding: 10px 14px; border-radius: 8px; color: #fff; background: var(--accent); }
     .skip-link:focus { top: 12px; }
-    .topbar {
-      position: sticky; top: 0; z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: color-mix(in srgb, var(--bg) 82%, transparent);
-      backdrop-filter: blur(18px);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 24px; }
+    .topbar { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(18px); }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 74px; gap: 24px; }
     .brand { display: inline-flex; align-items: center; gap: 11px; min-width: max-content; }
-    .brand-mark {
-      display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid color-mix(in srgb, var(--accent) 48%, transparent);
-      border-radius: 12px; color: var(--accent); background: color-mix(in srgb, var(--accent) 9%, var(--surface)); font-weight: 900; letter-spacing: -.08em;
-      box-shadow: inset 0 0 18px color-mix(in srgb, var(--accent) 10%, transparent);
-    }
-    .brand-name { display: grid; line-height: 1.15; }
-    .brand-name strong { font-size: .9rem; letter-spacing: .13em; }
-    .brand-name small { margin-top: 4px; color: var(--faint); font: 600 .58rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .14em; }
-    .nav-links { display: flex; align-items: center; gap: clamp(14px, 2vw, 29px); color: var(--muted); font-size: .81rem; font-weight: 650; }
+    .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; color: #fff; background: var(--ink); font: 800 .8rem/1 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: -.08em; }
+    .brand-name { display: grid; line-height: 1.12; }
+    .brand-name strong { font-size: .86rem; letter-spacing: .08em; }
+    .brand-name small { margin-top: 5px; color: var(--muted); font: 650 .56rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .12em; }
+    .nav-links { display: flex; align-items: center; gap: clamp(17px, 2.6vw, 32px); color: var(--muted); font-size: .78rem; font-weight: 700; }
     .nav-links a { transition: color .2s ease; }
-    .nav-links a:hover, .nav-links a[aria-current="location"] { color: var(--text); }
-    .nav-tools { display: flex; align-items: center; gap: 8px; }
-    .icon-btn, .lang-btn, .menu-btn {
-      display: inline-flex; justify-content: center; align-items: center; min-width: 40px; height: 40px;
-      border: 1px solid var(--line); border-radius: 12px; background: var(--surface); cursor: pointer; transition: .2s ease;
-    }
+    .nav-links a:hover, .nav-links a[aria-current="location"] { color: var(--ink); }
+    .nav-tools { display: flex; align-items: center; gap: 7px; }
+    .icon-btn, .lang-btn, .menu-btn { display: inline-flex; justify-content: center; align-items: center; min-width: 39px; height: 39px; padding: 0 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); cursor: pointer; transition: border-color .2s ease, transform .2s ease, background .2s ease; }
     .icon-btn:hover, .lang-btn:hover, .menu-btn:hover { border-color: var(--line-strong); transform: translateY(-1px); }
-    .lang-btn { min-width: 51px; color: var(--muted); font: 750 .68rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .icon-btn { color: var(--accent); font-size: 1rem; }
-    .menu-btn { display: none; font-size: 1.1rem; }
-    .hero { position: relative; display: grid; grid-template-columns: 1.06fr .94fr; align-items: center; gap: clamp(34px, 6vw, 78px); min-height: 690px; padding-block: 80px 94px; }
+    .lang-btn { min-width: 46px; color: var(--muted); font: 750 .65rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .icon-btn { color: var(--accent); font-size: .87rem; }
+    .menu-btn { display: none; font-size: 1rem; }
+    .hero { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(40px, 7vw, 86px); min-height: 680px; padding-block: 84px 96px; }
     .hero-copy { position: relative; z-index: 1; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font: 750 .68rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .16em; text-transform: uppercase; }
-    .live-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
-    .live-dot::after { content: ""; position: absolute; inset: -5px; border: 1px solid var(--accent); border-radius: 50%; animation: ping 2s ease-out infinite; }
+    .eyebrow, .section-kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font: 750 .64rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .15em; text-transform: uppercase; }
+    .live-dot { position: relative; width: 7px; height: 7px; border-radius: 50%; background: #6d9b2f; box-shadow: 0 0 0 4px color-mix(in srgb, #6d9b2f 15%, transparent); }
     h1, h2, h3, p { margin-top: 0; }
-    .hero h1 { max-width: 690px; margin: 22px 0 19px; font-size: clamp(3.3rem, 7.3vw, 6.4rem); line-height: .99; letter-spacing: -.075em; font-weight: 820; }
-    .hero-highlight { display: block; color: transparent; background: linear-gradient(100deg, var(--accent), var(--accent-2) 64%, var(--violet)); -webkit-background-clip: text; background-clip: text; }
-    .hero-sub { max-width: 570px; margin-bottom: 27px; color: var(--muted); font-size: clamp(.98rem, 1.6vw, 1.12rem); }
-    .hero-sub strong { color: var(--text); font-weight: 700; }
-    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 18px; border: 1px solid var(--line-strong); border-radius: 13px; font-size: .83rem; font-weight: 750; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .hero h1 { max-width: 670px; margin: 23px 0 21px; font-size: clamp(3.25rem, 7vw, 6.05rem); line-height: 1.02; letter-spacing: -.075em; font-weight: 780; }
+    .hero h1 em { color: var(--accent); font-style: normal; }
+    .hero-sub { max-width: 555px; margin-bottom: 29px; color: var(--muted); font-size: clamp(.96rem, 1.5vw, 1.08rem); }
+    .hero-sub strong { color: var(--ink); font-weight: 750; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 11px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 0 18px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: .77rem; font-weight: 750; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease; }
     .button:hover { transform: translateY(-2px); }
-    .button-primary { border-color: transparent; color: #0a1008; background: var(--accent); box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 18%, transparent); }
-    .button-primary:hover { box-shadow: 0 12px 34px color-mix(in srgb, var(--accent) 30%, transparent); }
-    .button-quiet { background: var(--surface); }
-    .text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: .78rem; font-weight: 700; }
+    .button-primary { border-color: var(--ink); color: var(--bg); background: var(--ink); }
+    .button-primary:hover { box-shadow: 0 9px 24px rgba(29, 35, 29, .18); }
+    .button-quiet { background: var(--paper); }
+    .button-quiet:hover { border-color: var(--accent); color: var(--accent); }
+    .text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); font-size: .75rem; font-weight: 700; }
     .text-link:hover { color: var(--accent); }
-    .hero-foot { display: flex; align-items: center; gap: 18px; margin-top: 35px; color: var(--faint); font: 650 .65rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .08em; }
-    .hero-foot span + span { padding-left: 18px; border-left: 1px solid var(--line-strong); }
-    .hero-art { position: relative; min-height: 440px; display: grid; place-items: center; isolation: isolate; }
-    .halo { position: absolute; width: min(440px, 90vw); aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; box-shadow: 0 0 100px color-mix(in srgb, var(--accent-2) 10%, transparent), inset 0 0 80px color-mix(in srgb, var(--violet) 8%, transparent); }
-    .halo::before, .halo::after { content: ""; position: absolute; inset: 9%; border: 1px dashed color-mix(in srgb, var(--accent-2) 24%, transparent); border-radius: 50%; animation: orbit 48s linear infinite; }
-    .halo::after { inset: 20%; border-style: solid; border-color: color-mix(in srgb, var(--violet) 22%, transparent); animation-direction: reverse; animation-duration: 68s; }
-    .core { position: relative; display: grid; place-items: center; width: min(270px, 58vw); aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--accent-2) 38%, var(--line)); border-radius: 40% 60% 54% 46% / 48% 42% 58% 52%; background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--accent-2) 23%, var(--surface-strong)), transparent 38%), radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--violet) 24%, var(--surface-strong)), var(--surface-strong) 62%); box-shadow: 0 0 90px color-mix(in srgb, var(--accent-2) 13%, transparent), inset 0 0 45px rgba(255,255,255,.05); animation: morph 12s ease-in-out infinite; }
-    .core-mark { color: var(--text); font-size: 5.5rem; font-weight: 850; letter-spacing: -.12em; text-shadow: 0 0 42px color-mix(in srgb, var(--accent) 36%, transparent); transform: translateX(-.07em); }
-    .orbit-label { position: absolute; z-index: 2; padding: 9px 12px; border: 1px solid var(--line-strong); border-radius: 12px; background: color-mix(in srgb, var(--surface-strong) 88%, transparent); box-shadow: var(--shadow); color: var(--muted); font: 650 .62rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .08em; backdrop-filter: blur(12px); }
-    .orbit-label b { color: var(--accent); }
-    .orbit-a { top: 10%; right: -2%; }
-    .orbit-b { left: -2%; top: 32%; }
-    .orbit-c { right: 1%; bottom: 13%; }
-    .mini-console { position: absolute; bottom: 2%; left: 50%; z-index: 3; width: min(340px, 86%); padding: 14px 16px; border: 1px solid var(--line-strong); border-radius: 15px; background: color-mix(in srgb, var(--surface-strong) 90%, transparent); box-shadow: var(--shadow); transform: translateX(-50%); backdrop-filter: blur(12px); }
-    .console-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; color: var(--faint); font: 650 .57rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; }
-    .console-lights { display: flex; gap: 4px; }
-    .console-lights i { width: 6px; height: 6px; border-radius: 50%; background: var(--line-strong); }
-    .console-lights i:first-child { background: #ff7485; }
-    .console-lights i:nth-child(2) { background: #ffc766; }
-    .console-lights i:last-child { background: var(--accent); }
-    .console-line { display: flex; gap: 8px; color: var(--muted); font: 650 .69rem/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .console-line b { color: var(--accent); }
-    .section { padding-block: 100px; border-top: 1px solid var(--line); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 38px; }
-    .section-kicker { margin-bottom: 9px; color: var(--accent-2); font: 750 .66rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .16em; text-transform: uppercase; }
-    .section-title { margin-bottom: 0; font-size: clamp(2rem, 4.1vw, 3.35rem); line-height: 1.08; letter-spacing: -.06em; }
-    .section-note { max-width: 370px; margin-bottom: 2px; color: var(--muted); font-size: .89rem; }
-    .about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
-    .panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
-    .about-main { padding: clamp(24px, 4vw, 40px); }
-    .about-main h3 { margin-bottom: 14px; font-size: 1.35rem; letter-spacing: -.035em; }
-    .about-main p { color: var(--muted); font-size: .94rem; }
+    .hero-foot { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 34px; color: var(--muted); font: 650 .6rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .07em; }
+    .hero-foot span + span { padding-left: 16px; border-left: 1px solid var(--line-strong); }
+    .hero-foot b { color: var(--ink); font-weight: 650; }
+    .hero-art { position: relative; min-height: 435px; display: grid; place-items: center; isolation: isolate; }
+    .art-frame { position: relative; width: min(430px, 100%); aspect-ratio: .92; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 4px; background: var(--paper-2); box-shadow: var(--shadow); }
+    .art-frame::before { content: ""; position: absolute; inset: 0; opacity: .45; background-image: linear-gradient(var(--line-strong) 1px, transparent 1px), linear-gradient(90deg, var(--line-strong) 1px, transparent 1px); background-size: 38px 38px; mask-image: linear-gradient(to bottom, #000, transparent 90%); }
+    .art-orbit { position: absolute; top: 14%; left: 17%; width: 66%; aspect-ratio: 1; border: 1px solid var(--line-strong); border-radius: 50%; transform: rotate(-22deg) scaleY(.72); }
+    .art-orbit::before, .art-orbit::after { content: ""; position: absolute; inset: 12%; border: 1px solid var(--line); border-radius: 50%; }
+    .art-orbit::after { inset: 25%; border-color: var(--accent); opacity: .6; }
+    .art-core { position: absolute; top: 26%; left: 30%; display: grid; place-items: center; width: 40%; aspect-ratio: 1; border-radius: 50%; color: #242a24; background: var(--lime); box-shadow: 0 18px 48px rgba(129, 152, 47, .2); font: 800 clamp(2.8rem, 6vw, 4.8rem)/1 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: -.12em; }
+    .art-core span { transform: translateX(-.06em); }
+    .art-stamp { position: absolute; top: 10%; right: 9%; display: grid; place-items: center; width: 66px; aspect-ratio: 1; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--accent); background: var(--paper); font: 750 .55rem/1.35 ui-monospace, SFMono-Regular, Consolas, monospace; text-align: center; letter-spacing: .08em; transform: rotate(9deg); }
+    .art-copy { position: absolute; right: 9%; bottom: 12%; left: 9%; display: flex; align-items: end; justify-content: space-between; gap: 20px; padding-top: 18px; border-top: 1px solid var(--line-strong); }
+    .art-copy small { display: block; margin-bottom: 6px; color: var(--muted); font: 650 .55rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .14em; text-transform: uppercase; }
+    .art-copy strong { display: block; max-width: 210px; font-size: clamp(1.2rem, 2.5vw, 1.75rem); line-height: 1.12; letter-spacing: -.055em; }
+    .art-copy .art-index { color: var(--faint); font: 650 .62rem ui-monospace, SFMono-Regular, Consolas, monospace; white-space: nowrap; }
+    .art-label { position: absolute; top: 18%; left: 8%; padding: 7px 10px; border: 1px solid var(--line-strong); color: var(--muted); background: var(--paper); font: 650 .52rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+    .section { padding-block: 94px; border-top: 1px solid var(--line); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 36px; }
+    .section-kicker { margin-bottom: 11px; color: var(--muted); }
+    .section-title { margin-bottom: 0; font-size: clamp(2.05rem, 4.15vw, 3.35rem); line-height: 1.09; letter-spacing: -.065em; font-weight: 760; }
+    .section-note { max-width: 385px; margin-bottom: 3px; color: var(--muted); font-size: .84rem; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px; }
+    .panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: var(--shadow); }
+    .about-main { padding: clamp(25px, 4vw, 42px); }
+    .about-main h3 { margin-bottom: 14px; font-size: 1.28rem; letter-spacing: -.04em; }
+    .about-main p { color: var(--muted); font-size: .89rem; }
     .about-main p:last-child { margin-bottom: 0; }
-    .about-side { display: grid; gap: 18px; }
-    .signal-card { padding: 22px; }
-    .signal-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font: 700 .66rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; }
+    .about-side { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .signal-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 170px; padding: 21px; }
+    .signal-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font: 700 .58rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .09em; text-transform: uppercase; }
     .signal-head span:last-child { color: var(--accent); }
-    .signal-value { margin: 13px 0 3px; font-size: 2.25rem; line-height: 1; font-weight: 800; letter-spacing: -.06em; }
-    .signal-desc { margin: 0; color: var(--faint); font-size: .75rem; }
-    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .skill-card { position: relative; overflow: hidden; padding: 25px; }
-    .skill-card::after { content: ""; position: absolute; top: -65px; right: -65px; width: 150px; aspect-ratio: 1; border-radius: 50%; background: color-mix(in srgb, var(--accent-2) 9%, transparent); filter: blur(20px); pointer-events: none; }
-    .skill-top { position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-bottom: 22px; z-index: 1; }
-    .skill-symbol { display: grid; place-items: center; width: 43px; height: 43px; border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--line)); border-radius: 14px; color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--surface)); font: 800 1rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .skill-index { color: var(--faint); font: 650 .62rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .skill-card h3 { margin-bottom: 5px; font-size: 1rem; }
-    .skill-card > p { min-height: 44px; margin-bottom: 23px; color: var(--muted); font-size: .78rem; }
-    .meter { margin-top: 13px; }
-    .meter-label { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 6px; color: var(--muted); font-size: .68rem; }
-    .meter-label b { color: var(--text); font: 700 .65rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .meter-track { height: 5px; overflow: hidden; border-radius: 99px; background: var(--line-strong); }
-    .meter-fill { display: block; width: var(--value); height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent-2), var(--accent)); transform-origin: left; animation: fill .9s ease both; }
-    .projects-tools { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 22px; }
+    .signal-value { margin: 24px 0 4px; font-size: clamp(1.55rem, 2.5vw, 2.2rem); line-height: 1; font-weight: 780; letter-spacing: -.07em; }
+    .signal-desc { margin: 0; color: var(--muted); font-size: .68rem; }
+    .toolkit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+    .tool-card { min-height: 220px; padding: 24px; }
+    .tool-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 28px; }
+    .tool-symbol { display: grid; place-items: center; width: 43px; height: 43px; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--accent); background: var(--accent-soft); font: 750 .9rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .tool-index { color: var(--faint); font: 650 .58rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+    .tool-card h3 { margin-bottom: 7px; font-size: 1rem; letter-spacing: -.025em; }
+    .tool-card p { margin-bottom: 18px; color: var(--muted); font-size: .76rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { padding: 5px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font: 650 .57rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .projects-tools { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 19px; }
     .filter-list { display: flex; flex-wrap: wrap; gap: 7px; }
-    .filter-btn { min-height: 37px; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: transparent; cursor: pointer; font-size: .72rem; font-weight: 750; transition: .2s ease; }
-    .filter-btn:hover { color: var(--text); border-color: var(--line-strong); }
-    .filter-btn[aria-pressed="true"] { color: #0a1008; border-color: var(--accent); background: var(--accent); }
-    .search-box { position: relative; display: flex; align-items: center; min-width: min(260px, 100%); }
-    .search-box span { position: absolute; left: 13px; color: var(--faint); font-size: .9rem; }
-    .search-box input { width: 100%; height: 39px; padding: 0 14px 0 38px; border: 1px solid var(--line); border-radius: 12px; color: var(--text); background: var(--surface); font-size: .75rem; }
-    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-    .project-card { display: flex; flex-direction: column; min-height: 320px; overflow: hidden; transition: transform .25s ease, border-color .25s ease; }
-    .project-card:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--accent-2) 42%, var(--line)); }
+    .filter-btn { min-height: 35px; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: transparent; cursor: pointer; font-size: .68rem; font-weight: 750; transition: .2s ease; }
+    .filter-btn:hover { color: var(--ink); border-color: var(--line-strong); }
+    .filter-btn[aria-pressed="true"] { color: var(--bg); border-color: var(--ink); background: var(--ink); }
+    .search-box { position: relative; display: flex; align-items: center; width: min(260px, 100%); }
+    .search-box span { position: absolute; left: 13px; color: var(--muted); font-size: .9rem; }
+    .search-box input { width: 100%; height: 37px; padding: 0 13px 0 36px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: var(--paper); font-size: .7rem; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .project-card { display: flex; flex-direction: column; min-height: 365px; overflow: hidden; transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+    .project-card:hover { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: 0 24px 54px rgba(36, 42, 33, .12); }
     .project-card[hidden] { display: none; }
-    .project-art { position: relative; display: grid; place-items: center; min-height: 142px; overflow: hidden; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 13%, var(--surface-strong)), color-mix(in srgb, var(--violet) 12%, var(--surface-strong))); }
-    .project-art::before { content: ""; position: absolute; inset: 0; opacity: .55; background-image: radial-gradient(var(--line-strong) 1px, transparent 1px); background-size: 16px 16px; mask-image: linear-gradient(135deg, black, transparent 75%); }
-    .project-art-mark { position: relative; color: color-mix(in srgb, var(--accent-2) 82%, var(--text)); font: 850 3.3rem/1 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: -.12em; text-shadow: 0 0 32px color-mix(in srgb, var(--accent-2) 35%, transparent); }
-    .project-code { position: absolute; top: 14px; left: 15px; color: var(--muted); font: 650 .57rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
-    .project-type { position: absolute; right: 13px; bottom: 12px; padding: 4px 8px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--muted); background: color-mix(in srgb, var(--bg) 60%, transparent); font: 650 .56rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .project-body { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 20px; }
-    .project-body h3 { margin-bottom: 8px; font-size: 1.02rem; letter-spacing: -.025em; }
-    .project-body p { margin-bottom: 18px; color: var(--muted); font-size: .77rem; }
-    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
-    .tag { padding: 4px 8px; border: 1px solid var(--line); border-radius: 7px; color: var(--faint); font: 650 .58rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .project-open { display: inline-flex; align-items: center; gap: 7px; margin-top: 17px; padding: 0; border: 0; color: var(--accent); background: none; cursor: pointer; font-size: .7rem; font-weight: 800; }
-    .project-open:hover { color: var(--accent-2); }
-    .results-note { margin: 18px 0 0; color: var(--faint); font-size: .7rem; }
-    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 16px; align-items: stretch; }
+    .project-art { position: relative; display: grid; place-items: center; min-height: 166px; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--paper-2); }
+    .project-art::before { content: ""; position: absolute; inset: 0; opacity: .65; background-image: linear-gradient(45deg, transparent 49.5%, var(--line-strong) 50%, transparent 50.5%), linear-gradient(-45deg, transparent 49.5%, var(--line-strong) 50%, transparent 50.5%); background-size: 28px 28px; mask-image: radial-gradient(ellipse, #000, transparent 72%); }
+    .project-art-mark { position: relative; color: var(--ink); font: 800 clamp(2.7rem, 5vw, 4.1rem)/1 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: -.12em; }
+    .project-card:nth-child(2) .project-art { background: color-mix(in srgb, var(--accent-soft) 70%, var(--paper)); }
+    .project-card:nth-child(2) .project-art-mark { color: var(--accent); }
+    .project-card:nth-child(3) .project-art { background: color-mix(in srgb, var(--lime) 28%, var(--paper)); }
+    .project-code { position: absolute; top: 13px; left: 15px; color: var(--muted); font: 650 .53rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+    .project-type { position: absolute; right: 13px; bottom: 12px; color: var(--muted); font: 650 .52rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+    .project-body { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 19px; }
+    .project-body h3 { margin-bottom: 7px; font-size: .96rem; letter-spacing: -.025em; }
+    .project-body p { margin-bottom: 17px; color: var(--muted); font-size: .73rem; }
+    .project-open { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding: 14px 0 0; border: 0; color: var(--accent); background: none; cursor: pointer; font-size: .68rem; font-weight: 800; }
+    .project-open:hover { color: var(--ink); }
+    .results-note { min-height: 1.2em; margin: 16px 0 0; color: var(--muted); font-size: .66rem; }
+    .contact-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 14px; align-items: stretch; }
     .contact-info, .contact-form { padding: clamp(22px, 3.2vw, 34px); }
-    .contact-info h3 { margin-bottom: 9px; font-size: 1.3rem; }
-    .contact-info > p { color: var(--muted); font-size: .83rem; }
-    .contact-method { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 15px 0; border-top: 1px solid var(--line); }
-    .contact-method small { display: block; color: var(--faint); font: 650 .58rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; }
-    .contact-method strong { display: block; margin-top: 4px; font-size: .82rem; overflow-wrap: anywhere; }
-    .copy-btn { flex: 0 0 auto; min-width: 38px; height: 36px; border: 1px solid var(--line); border-radius: 10px; color: var(--accent); background: var(--surface); cursor: pointer; }
-    .contact-form { display: grid; gap: 13px; }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .field { display: grid; gap: 6px; }
-    .field label { color: var(--muted); font-size: .68rem; font-weight: 700; }
-    .field input, .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 11px; padding: 11px 13px; color: var(--text); background: color-mix(in srgb, var(--bg) 48%, var(--surface)); font-size: .77rem; }
-    .field textarea { min-height: 116px; resize: vertical; }
+    .contact-info h3 { margin-bottom: 8px; font-size: 1.24rem; letter-spacing: -.04em; }
+    .contact-info > p { color: var(--muted); font-size: .78rem; }
+    .contact-method { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); }
+    .contact-method small { display: block; color: var(--muted); font: 650 .53rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; }
+    .contact-method strong { display: block; margin-top: 4px; font-size: .78rem; overflow-wrap: anywhere; }
+    .copy-btn { flex: 0 0 auto; min-width: 37px; height: 35px; border: 1px solid var(--line); border-radius: 50%; color: var(--accent); background: var(--paper); cursor: pointer; }
+    .contact-form { display: grid; gap: 12px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+    .field { display: grid; gap: 5px; }
+    .field label { color: var(--muted); font-size: .65rem; font-weight: 700; }
+    .field input, .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; color: var(--ink); background: var(--bg); font-size: .73rem; }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder, .search-box input::placeholder { color: var(--faint); }
     .form-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .form-hint { max-width: 250px; margin: 0; color: var(--faint); font-size: .63rem; }
-    .footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding-block: 25px 36px; border-top: 1px solid var(--line); color: var(--faint); font-size: .68rem; }
-    .footer strong { color: var(--text); }
+    .form-hint { max-width: 260px; margin: 0; color: var(--muted); font-size: .59rem; }
+    .footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding-block: 23px 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: .65rem; }
+    .footer strong { color: var(--ink); }
     .back-top { color: var(--muted); font-weight: 700; }
     .back-top:hover { color: var(--accent); }
-    .toast { position: fixed; right: 20px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 10px; max-width: calc(100% - 40px); padding: 12px 16px; border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line)); border-radius: 13px; color: var(--text); background: var(--surface-strong); box-shadow: var(--shadow); font-size: .75rem; opacity: 0; transform: translateY(12px); pointer-events: none; transition: .22s ease; }
+    .toast { position: fixed; right: 18px; bottom: 18px; z-index: 60; display: flex; align-items: center; gap: 9px; max-width: calc(100% - 36px); padding: 11px 15px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink); background: var(--paper); box-shadow: var(--shadow); font-size: .7rem; opacity: 0; transform: translateY(10px); pointer-events: none; transition: .22s ease; }
     .toast.show { opacity: 1; transform: translateY(0); }
     .toast b { color: var(--accent); }
-    dialog { width: min(520px, calc(100% - 32px)); padding: 0; border: 1px solid var(--line-strong); border-radius: 21px; color: var(--text); background: var(--surface-strong); box-shadow: var(--shadow); }
-    dialog::backdrop { background: rgba(3, 6, 11, .72); backdrop-filter: blur(7px); }
-    .dialog-inner { padding: 27px; }
-    .dialog-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-    .dialog-top h2 { margin-bottom: 7px; font-size: 1.45rem; letter-spacing: -.04em; }
-    .dialog-close { width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); background: transparent; cursor: pointer; }
-    .dialog-copy { color: var(--muted); font-size: .86rem; }
-    .cmd-list { display: grid; gap: 7px; margin-top: 20px; }
-    .cmd-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 11px; color: var(--text); background: var(--surface); cursor: pointer; text-align: left; }
-    .cmd-item:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
-    .cmd-item small { color: var(--faint); font: 650 .62rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
+    dialog { width: min(520px, calc(100% - 32px)); padding: 0; border: 1px solid var(--line-strong); border-radius: 20px; color: var(--ink); background: var(--paper); box-shadow: var(--shadow); }
+    dialog::backdrop { background: rgba(20, 24, 20, .55); backdrop-filter: blur(5px); }
+    .dialog-inner { padding: 26px; }
+    .dialog-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; }
+    .dialog-top h2 { margin-bottom: 7px; font-size: 1.42rem; letter-spacing: -.045em; }
+    .dialog-close { width: 35px; height: 35px; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); background: transparent; cursor: pointer; }
+    .dialog-copy { color: var(--muted); font-size: .82rem; }
+    .cmd-list { display: grid; gap: 7px; margin-top: 18px; }
+    .cmd-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--bg); cursor: pointer; text-align: left; }
+    .cmd-item:hover { border-color: var(--accent); }
+    .cmd-item small { color: var(--muted); font: 650 .58rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .55s ease, transform .55s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    @keyframes ping { 0% { transform: scale(.55); opacity: .8; } 100% { transform: scale(1.65); opacity: 0; } }
-    @keyframes orbit { to { transform: rotate(360deg); } }
-    @keyframes morph { 0%, 100% { border-radius: 40% 60% 54% 46% / 48% 42% 58% 52%; transform: rotate(-5deg); } 50% { border-radius: 58% 42% 40% 60% / 55% 60% 40% 45%; transform: rotate(5deg); } }
-    @keyframes fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
     @media (max-width: 900px) {
-      .nav-links { gap: 14px; }
-      .hero { grid-template-columns: 1fr .8fr; min-height: 620px; gap: 20px; }
-      .hero-art { min-height: 390px; }
+      .hero { grid-template-columns: 1.02fr .98fr; min-height: 610px; gap: 32px; }
+      .hero-art { min-height: 370px; }
       .project-grid { grid-template-columns: repeat(2, 1fr); }
-      .project-card:last-child { grid-column: span 2; }
-      .project-card:last-child .project-art { min-height: 130px; }
+      .project-card:last-child { grid-column: 1 / -1; }
+      .project-card:last-child .project-art { min-height: 145px; }
     }
     @media (max-width: 700px) {
-      .wrap { width: min(var(--max), calc(100% - 32px)); }
+      .wrap { width: min(var(--max), calc(100% - 34px)); }
       .nav { min-height: 66px; }
       .menu-btn { display: inline-flex; }
-      .nav-links { position: absolute; top: calc(100% + 1px); left: 0; right: 0; display: none; align-items: stretch; gap: 0; padding: 9px 16px 16px; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 95%, transparent); backdrop-filter: blur(16px); }
+      .nav-links { position: absolute; top: calc(100% + 1px); left: 0; right: 0; display: none; align-items: stretch; gap: 0; padding: 7px 17px 14px; border-bottom: 1px solid var(--line); background: var(--bg); }
       .nav-links.open { display: grid; }
-      .nav-links a { padding: 12px 7px; border-bottom: 1px solid var(--line); }
+      .nav-links a { padding: 11px 5px; border-bottom: 1px solid var(--line); }
       .nav-tools { margin-left: auto; }
-      .hero { grid-template-columns: 1fr; min-height: initial; padding-block: 72px 70px; }
-      .hero h1 { max-width: 610px; font-size: clamp(3rem, 13vw, 5rem); }
-      .hero-art { min-height: 360px; margin-top: 3px; }
-      .halo { width: min(350px, 86vw); }
-      .core { width: min(220px, 58vw); }
-      .core-mark { font-size: 4.5rem; }
-      .orbit-a { right: 2%; }
-      .orbit-b { left: 0; }
-      .orbit-c { right: 3%; }
-      .section { padding-block: 75px; }
+      .hero { grid-template-columns: 1fr; min-height: 0; padding-block: 65px 72px; }
+      .hero h1 { max-width: 600px; font-size: clamp(3.1rem, 13vw, 5.1rem); }
+      .hero-art { min-height: 390px; }
+      .art-frame { width: min(390px, 100%); }
+      .section { padding-block: 72px; }
       .section-head { display: block; }
       .section-note { margin-top: 13px; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .about-side { grid-template-columns: 1fr 1fr; }
-      .skill-grid { grid-template-columns: 1fr; }
-      .skill-card > p { min-height: auto; }
+      .toolkit-grid { grid-template-columns: 1fr; }
+      .tool-card { min-height: auto; }
+      .tool-top { margin-bottom: 20px; }
       .projects-tools { align-items: stretch; }
       .filter-list { width: 100%; }
       .search-box { width: 100%; }
     }
     @media (max-width: 480px) {
-      .brand-name strong { font-size: .77rem; }
-      .brand-name small { font-size: .51rem; }
+      .brand-name strong { font-size: .76rem; }
+      .brand-name small { font-size: .49rem; }
       .brand-mark { width: 35px; height: 35px; }
-      .hero-foot { gap: 10px; flex-wrap: wrap; }
-      .hero-foot span + span { padding-left: 10px; }
+      .hero-foot { gap: 9px; font-size: .55rem; }
+      .hero-foot span + span { padding-left: 9px; }
       .hero-actions .button { flex: 1; }
-      .about-side { grid-template-columns: 1fr 1fr; gap: 9px; }
-      .signal-card { padding: 16px 13px; }
-      .signal-value { font-size: 1.75rem; }
+      .about-side { gap: 9px; }
+      .signal-card { min-height: 145px; padding: 15px 13px; }
+      .signal-value { font-size: 1.52rem; }
       .project-grid { grid-template-columns: 1fr; }
       .project-card:last-child { grid-column: auto; }
       .field-row { grid-template-columns: 1fr; }
@@ -308,13 +275,13 @@
   <header class="topbar">
     <div class="wrap nav">
       <a class="brand" href="#home" aria-label="Snowqex25 home">
-        <span class="brand-mark" aria-hidden="true">S.</span>
-        <span class="brand-name"><strong>SNOWQEX<span style="color:var(--accent)">25</span></strong><small>DIGITAL LAB / CREATIVE ENGINEERING</small></span>
+        <span class="brand-mark" aria-hidden="true">S25</span>
+        <span class="brand-name"><strong>SNOWQEX<span style="color:var(--accent)">25</span></strong><small>DIGITAL PORTFOLIO</small></span>
       </a>
       <nav class="nav-links" id="site-nav" aria-label="Main navigation">
         <a href="#about" data-i18n="navAbout">เกี่ยวกับ</a>
-        <a href="#skills" data-i18n="navSkills">สกิล</a>
-        <a href="#projects" data-i18n="navProjects">โปรเจกต์</a>
+        <a href="#skills" data-i18n="navSkills">เครื่องมือ</a>
+        <a href="#projects" data-i18n="navProjects">ผลงาน</a>
         <a href="#contact" data-i18n="navContact">ติดต่อ</a>
       </nav>
       <div class="nav-tools">
@@ -330,23 +297,21 @@
     <section class="wrap hero" id="home">
       <div class="hero-copy">
         <div class="eyebrow"><span class="live-dot" aria-hidden="true"></span><span data-i18n="availability">เปิดรับงานและโปรเจกต์ที่น่าสนใจ</span></div>
-        <h1><span data-i18n="heroTitle">สร้างสรรค์โลกดิจิทัล</span><span class="hero-highlight" data-i18n="heroHighlight">ให้ขับเคลื่อนไปข้างหน้า</span></h1>
+        <h1><span data-i18n="heroTitle">สร้างดิจิทัล<br>ที่ <em>ใช้งานได้จริง</em></span></h1>
         <p class="hero-sub" data-i18n="heroSub">ผมคือ <strong>Snowqex25</strong> นักพัฒนาเว็บและ Discord Bot ที่ชอบเปลี่ยนไอเดียให้เป็นประสบการณ์ดิจิทัลที่ลื่นไหล ใช้งานง่าย และมีเอกลักษณ์</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#projects"><span data-i18n="viewWork">สำรวจผลงาน</span><span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="#projects"><span data-i18n="viewWork">ดูผลงาน</span><span aria-hidden="true">↗</span></a>
           <a class="button button-quiet" href="#contact"><span data-i18n="contactMe">คุยเรื่องโปรเจกต์</span><span aria-hidden="true">→</span></a>
         </div>
-        <div class="hero-foot"><span>WEB / BOTS / TOOLS</span><span>TH + EN</span><span>UTC+7 <b id="clock">--:--:--</b></span></div>
+        <div class="hero-foot"><span>WEB / BOTS / TOOLS</span><span>TH + EN</span><span>UTC+7 <b id="clock">--:--</b></span></div>
       </div>
-      <div class="hero-art" aria-label="Abstract digital identity artwork">
-        <div class="halo" aria-hidden="true"></div>
-        <div class="orbit-label orbit-a"><b>01</b> / BUILD</div>
-        <div class="orbit-label orbit-b"><b>02</b> / AUTOMATE</div>
-        <div class="orbit-label orbit-c"><b>03</b> / EXPLORE</div>
-        <div class="core"><span class="core-mark">S<span style="color:var(--accent)">25</span></span></div>
-        <div class="mini-console" aria-label="System status">
-          <div class="console-top"><span>snowqex.system</span><span class="console-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="console-line"><b>›</b><span data-i18n="consoleLine">พร้อมเปลี่ยนไอเดียให้เป็นจริง</span></div>
+      <div class="hero-art" aria-label="Abstract Snowqex25 digital portfolio artwork">
+        <div class="art-frame">
+          <div class="art-orbit" aria-hidden="true"></div>
+          <div class="art-core" aria-hidden="true"><span>S25</span></div>
+          <div class="art-stamp" aria-hidden="true">IDEAS<br>INTO<br>USE</div>
+          <div class="art-label" aria-hidden="true">THAILAND / UTC+7</div>
+          <div class="art-copy"><div><small>SNOWQEX25 / DIGITAL LAB</small><strong data-i18n="artCaption">From idea<br>to experience.</strong></div><span class="art-index">001—025</span></div>
         </div>
       </div>
     </section>
@@ -364,8 +329,8 @@
             <p data-i18n="aboutText2">เวลาว่างมักใช้ทดลองเครื่องมือใหม่ ๆ เรียนรู้เทคโนโลยี AI และต่อยอดไอเดียด้านเกมให้เป็นของที่คนหยิบไปใช้ได้</p>
           </article>
           <div class="about-side">
-            <article class="panel signal-card reveal"><div class="signal-head"><span data-i18n="signalFocus">จุดโฟกัส</span><span>LIVE</span></div><div class="signal-value">WEB<span style="color:var(--accent)">×</span>BOT</div><p class="signal-desc" data-i18n="signalFocusSub">เว็บ · ระบบอัตโนมัติ · เครื่องมือ</p></article>
-            <article class="panel signal-card reveal"><div class="signal-head"><span data-i18n="signalBase">ฐานการทำงาน</span><span>TH</span></div><div class="signal-value">UTC<span style="color:var(--accent)">+7</span></div><p class="signal-desc" data-i18n="signalBaseSub">ประเทศไทย · ไทยและอังกฤษ</p></article>
+            <article class="panel signal-card reveal"><div class="signal-head"><span data-i18n="signalFocus">จุดโฟกัส</span><span>01—03</span></div><div class="signal-value">WEB<span style="color:var(--accent)"> × </span>BOT</div><p class="signal-desc" data-i18n="signalFocusSub">เว็บ · ระบบอัตโนมัติ · เครื่องมือ</p></article>
+            <article class="panel signal-card reveal"><div class="signal-head"><span data-i18n="signalBase">ที่ตั้ง</span><span>TH</span></div><div class="signal-value">UTC<span style="color:var(--accent)">+7</span></div><p class="signal-desc" data-i18n="signalBaseSub">ประเทศไทย · ไทยและอังกฤษ</p></article>
           </div>
         </div>
       </div>
@@ -374,28 +339,13 @@
     <section class="section" id="skills">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><p class="section-kicker">02 / TOOLKIT</p><h2 class="section-title" data-i18n="skillsTitle">เครื่องมือที่ใช้<br>สร้างสิ่งใหม่</h2></div>
-          <p class="section-note" data-i18n="skillsLead">ตั้งแต่งานหน้าบ้านไปจนถึงบอทและระบบจัดเก็บข้อมูล เลือกใช้ให้เหมาะกับโจทย์</p>
+          <div><p class="section-kicker">02 / TOOLKIT</p><h2 class="section-title" data-i18n="skillsTitle">เครื่องมือสำหรับ<br>สร้างสิ่งใหม่</h2></div>
+          <p class="section-note" data-i18n="skillsLead">รวมเทคโนโลยีที่ใช้กับงานเว็บ บอท และระบบข้อมูล โดยไม่ตีค่าความชำนาญเป็นเปอร์เซ็นต์</p>
         </div>
-        <div class="skill-grid">
-          <article class="panel skill-card reveal">
-            <div class="skill-top"><span class="skill-symbol">&lt;/&gt;</span><span class="skill-index">STACK / 01</span></div>
-            <h3 data-i18n="skillFrontend">เว็บฟรอนต์เอนด์</h3><p>HTML · CSS · JavaScript · Tailwind</p>
-            <div class="meter"><div class="meter-label"><span>HTML / CSS</span><b>90%</b></div><div class="meter-track"><i class="meter-fill" style="--value:90%"></i></div></div>
-            <div class="meter"><div class="meter-label"><span>JavaScript</span><b>85%</b></div><div class="meter-track"><i class="meter-fill" style="--value:85%"></i></div></div>
-          </article>
-          <article class="panel skill-card reveal">
-            <div class="skill-top"><span class="skill-symbol">{ }</span><span class="skill-index">STACK / 02</span></div>
-            <h3 data-i18n="skillAutomation">บอทและระบบอัตโนมัติ</h3><p>Node.js · Discord.js · Python</p>
-            <div class="meter"><div class="meter-label"><span>Node.js / Discord.js</span><b>88%</b></div><div class="meter-track"><i class="meter-fill" style="--value:88%"></i></div></div>
-            <div class="meter"><div class="meter-label"><span>Python</span><b>75%</b></div><div class="meter-track"><i class="meter-fill" style="--value:75%"></i></div></div>
-          </article>
-          <article class="panel skill-card reveal">
-            <div class="skill-top"><span class="skill-symbol">↗</span><span class="skill-index">STACK / 03</span></div>
-            <h3 data-i18n="skillData">ข้อมูลและการปล่อยงาน</h3><p>GitHub · MongoDB · SQLite · Vercel</p>
-            <div class="meter"><div class="meter-label"><span>Git / GitHub</span><b>85%</b></div><div class="meter-track"><i class="meter-fill" style="--value:85%"></i></div></div>
-            <div class="meter"><div class="meter-label"><span>MongoDB / SQLite</span><b>70%</b></div><div class="meter-track"><i class="meter-fill" style="--value:70%"></i></div></div>
-          </article>
+        <div class="toolkit-grid">
+          <article class="panel tool-card reveal"><div class="tool-top"><span class="tool-symbol">&lt;/&gt;</span><span class="tool-index">STACK / 01</span></div><h3 data-i18n="skillFrontend">เว็บฟรอนต์เอนด์</h3><p data-i18n="skillFrontendDesc">หน้าจอที่ชัดเจน รองรับหลายขนาดหน้าจอ</p><div class="tag-list"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Tailwind</span></div></article>
+          <article class="panel tool-card reveal"><div class="tool-top"><span class="tool-symbol">{ }</span><span class="tool-index">STACK / 02</span></div><h3 data-i18n="skillAutomation">บอทและระบบอัตโนมัติ</h3><p data-i18n="skillAutomationDesc">บอท เครื่องมือ และงานที่ช่วยลดขั้นตอน</p><div class="tag-list"><span class="tag">Node.js</span><span class="tag">Discord.js</span><span class="tag">Python</span></div></article>
+          <article class="panel tool-card reveal"><div class="tool-top"><span class="tool-symbol">↗</span><span class="tool-index">STACK / 03</span></div><h3 data-i18n="skillData">ข้อมูลและการปล่อยงาน</h3><p data-i18n="skillDataDesc">จัดเก็บข้อมูล ควบคุมเวอร์ชัน และเผยแพร่เว็บ</p><div class="tag-list"><span class="tag">GitHub</span><span class="tag">MongoDB</span><span class="tag">SQLite</span><span class="tag">Vercel</span></div></article>
         </div>
       </div>
     </section>
@@ -403,7 +353,7 @@
     <section class="section" id="projects">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><p class="section-kicker">03 / SELECTED WORK</p><h2 class="section-title" data-i18n="projectsTitle">พื้นที่ทดลอง<br>ไอเดียที่ใช้งานได้</h2></div>
+          <div><p class="section-kicker">03 / SELECTED WORK</p><h2 class="section-title" data-i18n="projectsTitle">ผลงานและไอเดีย<br>ที่นำไปใช้ได้จริง</h2></div>
           <p class="section-note" data-i18n="projectsLead">เลือกดูตามหมวด หรือค้นหาจากชื่อและเทคโนโลยีได้ทันที</p>
         </div>
         <div class="projects-tools reveal">
@@ -464,23 +414,23 @@
   <div class="toast" id="toast" role="status" aria-live="polite"><b>✓</b><span id="toast-text">คัดลอกแล้ว</span></div>
 
   <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><div class="dialog-top"><div><p class="section-kicker" id="dialog-kicker">PROJECT BRIEF</p><h2 id="dialog-title"></h2></div><button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button></div><p class="dialog-copy" id="dialog-copy"></p><div class="tag-list" id="dialog-tags"></div></div></dialog>
-  <dialog id="command-dialog" aria-labelledby="command-title"><div class="dialog-inner"><div class="dialog-top"><div><p class="section-kicker">QUICK NAVIGATION</p><h2 id="command-title" data-i18n="commandTitle">ไปยังส่วนต่าง ๆ</h2></div><button class="dialog-close" type="button" data-close-command aria-label="Close">×</button></div><p class="dialog-copy" data-i18n="commandHint">เลือกปลายทางที่ต้องการ</p><div class="cmd-list"><button class="cmd-item" data-go="#about"><span data-i18n="navAbout">เกี่ยวกับ</span><small>01</small></button><button class="cmd-item" data-go="#skills"><span data-i18n="navSkills">สกิล</span><small>02</small></button><button class="cmd-item" data-go="#projects"><span data-i18n="navProjects">โปรเจกต์</span><small>03</small></button><button class="cmd-item" data-go="#contact"><span data-i18n="navContact">ติดต่อ</span><small>04</small></button></div></div></dialog>
+  <dialog id="command-dialog" aria-labelledby="command-title"><div class="dialog-inner"><div class="dialog-top"><div><p class="section-kicker">QUICK NAVIGATION</p><h2 id="command-title" data-i18n="commandTitle">ไปยังส่วนต่าง ๆ</h2></div><button class="dialog-close" type="button" data-close-command aria-label="Close">×</button></div><p class="dialog-copy" data-i18n="commandHint">เลือกปลายทางที่ต้องการ</p><div class="cmd-list"><button class="cmd-item" data-go="#about"><span data-i18n="navAbout">เกี่ยวกับ</span><small>01</small></button><button class="cmd-item" data-go="#skills"><span data-i18n="navSkills">เครื่องมือ</span><small>02</small></button><button class="cmd-item" data-go="#projects"><span data-i18n="navProjects">ผลงาน</span><small>03</small></button><button class="cmd-item" data-go="#contact"><span data-i18n="navContact">ติดต่อ</span><small>04</small></button></div></div></dialog>
 
   <script>
     (() => {
       const copy = {
         th: {
-          skip:"ข้ามไปยังเนื้อหา", navAbout:"เกี่ยวกับ", navSkills:"สกิล", navProjects:"โปรเจกต์", navContact:"ติดต่อ",
-          availability:"เปิดรับงานและโปรเจกต์ที่น่าสนใจ", heroTitle:"สร้างสรรค์โลกดิจิทัล", heroHighlight:"ให้ขับเคลื่อนไปข้างหน้า",
+          skip:"ข้ามไปยังเนื้อหา", navAbout:"เกี่ยวกับ", navSkills:"เครื่องมือ", navProjects:"ผลงาน", navContact:"ติดต่อ",
+          availability:"เปิดรับงานและโปรเจกต์ที่น่าสนใจ", heroTitle:"สร้างดิจิทัล<br>ที่ <em>ใช้งานได้จริง</em>",
           heroSub:'ผมคือ <strong>Snowqex25</strong> นักพัฒนาเว็บและ Discord Bot ที่ชอบเปลี่ยนไอเดียให้เป็นประสบการณ์ดิจิทัลที่ลื่นไหล ใช้งานง่าย และมีเอกลักษณ์',
-          viewWork:"สำรวจผลงาน", contactMe:"คุยเรื่องโปรเจกต์", consoleLine:"พร้อมเปลี่ยนไอเดียให้เป็นจริง",
+          viewWork:"ดูผลงาน", contactMe:"คุยเรื่องโปรเจกต์", artCaption:"จากไอเดีย<br>สู่ประสบการณ์",
           aboutTitle:"คิดเป็นระบบ<br>สร้างด้วยความอยากรู้", aboutLead:"ผสมความเรียบง่ายเข้ากับรายละเอียดที่คิดมาแล้ว เพื่อให้ทุกชิ้นงานทั้งดูดีและใช้งานได้จริง",
           aboutCardTitle:"สวัสดีครับ ผม Snowqex25", aboutText1:"ผมสนุกกับการสร้างเว็บ แอปเล็ก ๆ และ Discord Bot ที่ช่วยแก้ปัญหาจริง ตั้งแต่การออกแบบหน้าจอที่ชัดเจน ไปจนถึงการเชื่อมระบบและทำงานอัตโนมัติ",
           aboutText2:"เวลาว่างมักใช้ทดลองเครื่องมือใหม่ ๆ เรียนรู้เทคโนโลยี AI และต่อยอดไอเดียด้านเกมให้เป็นของที่คนหยิบไปใช้ได้",
-          signalFocus:"จุดโฟกัส", signalFocusSub:"เว็บ · ระบบอัตโนมัติ · เครื่องมือ", signalBase:"ฐานการทำงาน", signalBaseSub:"ประเทศไทย · ไทยและอังกฤษ",
-          skillsTitle:"เครื่องมือที่ใช้<br>สร้างสิ่งใหม่", skillsLead:"ตั้งแต่งานหน้าบ้านไปจนถึงบอทและระบบจัดเก็บข้อมูล เลือกใช้ให้เหมาะกับโจทย์",
-          skillFrontend:"เว็บฟรอนต์เอนด์", skillAutomation:"บอทและระบบอัตโนมัติ", skillData:"ข้อมูลและการปล่อยงาน",
-          projectsTitle:"พื้นที่ทดลอง<br>ไอเดียที่ใช้งานได้", projectsLead:"เลือกดูตามหมวด หรือค้นหาจากชื่อและเทคโนโลยีได้ทันที",
+          signalFocus:"จุดโฟกัส", signalFocusSub:"เว็บ · ระบบอัตโนมัติ · เครื่องมือ", signalBase:"ที่ตั้ง", signalBaseSub:"ประเทศไทย · ไทยและอังกฤษ",
+          skillsTitle:"เครื่องมือสำหรับ<br>สร้างสิ่งใหม่", skillsLead:"รวมเทคโนโลยีที่ใช้กับงานเว็บ บอท และระบบข้อมูล โดยไม่ตีค่าความชำนาญเป็นเปอร์เซ็นต์",
+          skillFrontend:"เว็บฟรอนต์เอนด์", skillFrontendDesc:"หน้าจอที่ชัดเจน รองรับหลายขนาดหน้าจอ", skillAutomation:"บอทและระบบอัตโนมัติ", skillAutomationDesc:"บอท เครื่องมือ และงานที่ช่วยลดขั้นตอน", skillData:"ข้อมูลและการปล่อยงาน", skillDataDesc:"จัดเก็บข้อมูล ควบคุมเวอร์ชัน และเผยแพร่เว็บ",
+          projectsTitle:"ผลงานและไอเดีย<br>ที่นำไปใช้ได้จริง", projectsLead:"เลือกดูตามหมวด หรือค้นหาจากชื่อและเทคโนโลยีได้ทันที",
           filterAll:"ทั้งหมด", searchPlaceholder:"ค้นหาโปรเจกต์หรือเทคโนโลยี", projectBotTitle:"Advanced Discord Manager",
           projectBotDesc:"ระบบบอทจัดการเซิร์ฟเวอร์ พร้อมตั๋วช่วยเหลือ เพลง และข้อความต้อนรับอัตโนมัติ",
           projectWebTitle:"Modern Developer Portfolio", projectWebDesc:"เว็บพอร์ตโฟลิโอที่รองรับทุกหน้าจอ ใช้โทน Glass UI พร้อมเนื้อหาไทยและอังกฤษ",
@@ -496,20 +446,20 @@
         },
         en: {
           skip:"Skip to content", navAbout:"About", navSkills:"Toolkit", navProjects:"Projects", navContact:"Contact",
-          availability:"Available for select projects", heroTitle:"Building digital", heroHighlight:"experiences that move",
+          availability:"Available for select projects", heroTitle:"Building digital<br><em>things that work.</em>",
           heroSub:'I’m <strong>Snowqex25</strong>, a web and Discord bot developer who turns ideas into smooth, useful digital experiences with a distinct point of view.',
-          viewWork:"Explore projects", contactMe:"Start a conversation", consoleLine:"Ready to turn ideas into reality",
+          viewWork:"Explore work", contactMe:"Start a conversation", artCaption:"From idea<br>to experience.",
           aboutTitle:"Think in systems.<br>Build with curiosity.", aboutLead:"A mix of clear interfaces and thoughtful details, so every project feels good and works well.",
           aboutCardTitle:"Hi, I’m Snowqex25", aboutText1:"I enjoy building websites, small apps, and Discord bots that solve real problems—from clear interface design to integrations and automation.",
           aboutText2:"I spend my spare time exploring new tools, learning about AI, and turning gaming ideas into things people can actually use.",
           signalFocus:"Focus areas", signalFocusSub:"Web · Automation · Tools", signalBase:"Based in", signalBaseSub:"Thailand · Thai and English",
-          skillsTitle:"Tools for making<br>new things", skillsLead:"From frontend work to bots and data systems, choosing the right tool for the job.",
-          skillFrontend:"Web frontend", skillAutomation:"Bots & automation", skillData:"Data & delivery",
-          projectsTitle:"A playground for<br>useful ideas", projectsLead:"Browse by category or search by project name and technology.",
+          skillsTitle:"Tools for making<br>new things", skillsLead:"A toolkit for web, bots, and data systems. Technologies are listed without unverified proficiency scores.",
+          skillFrontend:"Web frontend", skillFrontendDesc:"Clear interfaces that work across screen sizes", skillAutomation:"Bots & automation", skillAutomationDesc:"Bots, utilities, and workflow helpers", skillData:"Data & delivery", skillDataDesc:"Storage, version control, and web deployment",
+          projectsTitle:"Selected work<br>and useful ideas", projectsLead:"Browse by category or search by project name and technology.",
           filterAll:"All projects", searchPlaceholder:"Search projects or technologies", projectBotTitle:"Advanced Discord Manager",
-          projectBotDesc:"A server management bot concept with support tickets, music, and automated welcome messages.",
+          projectBotDesc:"A server management bot with support tickets, music, and automated welcome messages.",
           projectWebTitle:"Modern Developer Portfolio", projectWebDesc:"A responsive portfolio with a glass-inspired interface and Thai and English content.",
-          projectGameTitle:"Gamer Utility Helper", projectGameDesc:"A utility concept for game stats and real-time server notifications.", openBrief:"Project brief",
+          projectGameTitle:"Gamer Utility Helper", projectGameDesc:"A utility for game stats and real-time server notifications.", openBrief:"Project details",
           contactTitle:"Have an idea in mind?<br>Let’s make it real.", contactLead:"Tell me about the problem or project you’re thinking through. I’d be glad to talk and help find a way forward.",
           contactDirect:"Direct contact", contactDirectSub:"Choose a channel and start a conversation.", locationValue:"Thailand · UTC+7",
           labelName:"Your name", labelEmail:"Reply email", labelSubject:"Subject", labelMessage:"Message",
@@ -517,13 +467,13 @@
           formHint:"This opens your email app with a draft for you to review before sending.", composeEmail:"Open email draft",
           footerMade:"Made with curiosity", backTop:"Back to top ↑", commandTitle:"Jump to a section", commandHint:"Choose where you want to go.",
           copied:"Email copied", results:"Showing {shown} of {total} projects", noResults:"No projects match that search.",
-          dialogKicker:"Project brief", emailRequired:"Please enter a valid email address."
+          dialogKicker:"Project details", emailRequired:"Please enter a valid email address."
         }
       };
       const projectData = {
-        bot:{ title:"projectBotTitle", desc:"projectBotDesc", tags:["Node.js","Discord.js","MongoDB"] },
-        web:{ title:"projectWebTitle", desc:"projectWebDesc", tags:["HTML5","Tailwind","JavaScript"] },
-        game:{ title:"projectGameTitle", desc:"projectGameDesc", tags:["Python","REST API","GUI"] }
+        bot:{ title:"projectBotTitle", desc:"projectBotDesc", tags:["Node.js", "Discord.js", "MongoDB"] },
+        web:{ title:"projectWebTitle", desc:"projectWebDesc", tags:["HTML5", "Tailwind", "JavaScript"] },
+        game:{ title:"projectGameTitle", desc:"projectGameDesc", tags:["Python", "REST API", "GUI"] }
       };
       const root = document.documentElement;
       const nav = document.getElementById("site-nav");
@@ -539,8 +489,7 @@
         document.querySelectorAll("[data-i18n]").forEach(el => {
           const value = copy[lang][el.dataset.i18n];
           if (value === undefined) return;
-          if (value.includes("<br>")) el.innerHTML = value;
-          else if (value.includes("<strong>")) el.innerHTML = value;
+          if (value.includes("<br>") || value.includes("<em>") || value.includes("<strong>")) el.innerHTML = value;
           else el.textContent = value;
         });
         document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
@@ -549,7 +498,7 @@
         });
         document.getElementById("lang-toggle").textContent = lang === "th" ? "EN" : "TH";
         document.getElementById("lang-toggle").setAttribute("aria-label", lang === "th" ? "Switch to English" : "เปลี่ยนเป็นภาษาไทย");
-        document.title = lang === "th" ? "Snowqex25 — Digital Lab" : "Snowqex25 — Digital Lab";
+        document.title = "Snowqex25 — Digital Portfolio";
         updateProjects();
       }
       function updateProjects() {
@@ -572,17 +521,18 @@
         toastTimer = setTimeout(() => toast.classList.remove("show"), 2300);
       }
       function updateClock() {
-        document.getElementById("clock").textContent = new Intl.DateTimeFormat("en-GB", { timeZone:"Asia/Bangkok", hour:"2-digit", minute:"2-digit", second:"2-digit", hour12:false }).format(new Date());
+        document.getElementById("clock").textContent = new Intl.DateTimeFormat("en-GB", { timeZone:"Asia/Bangkok", hour:"2-digit", minute:"2-digit", hour12:false }).format(new Date());
       }
       function openCommand() { document.getElementById("command-dialog").showModal(); }
 
       document.getElementById("year").textContent = new Date().getFullYear();
-      updateClock(); setInterval(updateClock, 1000);
+      updateClock(); setInterval(updateClock, 60000);
       applyLanguage(lang);
-      root.dataset.theme = localStorage.getItem("snowqex-theme") || "dark";
+      root.dataset.theme = localStorage.getItem("snowqex-theme") || "light";
       document.getElementById("theme-toggle").addEventListener("click", () => {
         root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
         localStorage.setItem("snowqex-theme", root.dataset.theme);
+        document.querySelector('meta[name="theme-color"]').content = root.dataset.theme === "dark" ? "#171a18" : "#f5f3ee";
       });
       document.getElementById("lang-toggle").addEventListener("click", () => applyLanguage(lang === "th" ? "en" : "th"));
       document.getElementById("menu-toggle").addEventListener("click", event => {
@@ -600,8 +550,7 @@
       document.getElementById("project-search").addEventListener("input", updateProjects);
       document.querySelectorAll("[data-project]").forEach(button => button.addEventListener("click", () => {
         const item = projectData[button.dataset.project];
-        const title = copy[lang][item.title];
-        document.getElementById("dialog-title").textContent = title;
+        document.getElementById("dialog-title").textContent = copy[lang][item.title];
         document.getElementById("dialog-copy").textContent = copy[lang][item.desc];
         document.getElementById("dialog-kicker").textContent = copy[lang].dialogKicker;
         document.getElementById("dialog-tags").innerHTML = item.tags.map(tag => `<span class="tag">${tag}</span>`).join("");
